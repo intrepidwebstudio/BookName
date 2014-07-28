@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+
+
+
+<head>
+
+<title>The Man in Blue &gt; Experiments &gt; widgEditor</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta name="author" content="The Man in Blue" />
+<meta name="robots" content="all" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<style type="text/css" media="all">
+	@import "css/info.css";
+	@import "css/main.css";
+	@import "css/widgEditor.css";
+</style>
+ <script src="phonegap.js"></script>
+<script type="text/javascript" src="scripts/widgEditor.js"></script>
+
+
+    <script type="text/javascript" >
+	
+function writeFileFromSDCard() {
+	
+	if(document.getElementById('name').value!='' || document.getElementById('name').value!=null) {
+	
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+   fileSystem.root.getDirectory("myappfolder", {
+           create: true
+       }, function(directory) {
+					   
+                       var DocumentName = document.getElementById('name').value;
+					   var FileName = DocumentName + ".txt";
+                       directory.getFile(FileName, { create: true, exclusive: false }, function(fileEntry) {
+						  
+                           fileEntry.createWriter(function(writer) {
+							   
+                               writer.seek(writer.length);
+								var content = document.getElementById('noise').value;
+                               writer.write(content);
+							   alert("file saved successfully");
+							   window.location = "index.html";
+                           }, fail);
+                       }, fail);
+                   }, fail);
+},fail);
+	}else{
+		alert('Enter name of the file');
+	}
+              
+			   
+			   
+}
+
+function fail(){
+				alert("sorry some error occured in saving file. Please try again.");   
+			   }
+    </script>
+
+
+</head>
+
+
+
+<body style="background-image:url('img/wood_bkgrnd.jpg');background-repeat:no-repeat;background-size:100% 100%;">
+	
+<div id="content" onResize="ChangeSize(this);" style="background-image:url('img/wood_bkgrnd.jpg');background-repeat:no-repeat;background-size:100% 100%;background: rgba(0, 0, 0, 0.1);">
+<input type="button" onclick="window.location='index.html'" value="Back" class="widgToolbar" style="margin-top:10px;"/>
+		<form action="#" onsubmit="#">
+        <input type="text" name="name" id="name" placeholder="Title of the file" style="width:84%;margin-left:3px;margin-bottom:5px;" />
+			<fieldset>
+				<textarea id="noise" name="noise"  placeholder="enter your text here " class="widgEditor nothing"> </textarea>
+			</fieldset>
+			<fieldset class="submit">
+				<input type="button" value="Save" onclick="writeFileFromSDCard()" />
+			</fieldset>
+		</form>
+	</div>
+    
+   
+<!-- END content -->
+<script type="text/javascript">
+
+
+ 
+ var winW = window.innerWidth;
+var winH = window.innerHeight;
+//alert(winH+'====='+winW);
+	
+setTimeout(function(){	
+
+
+var percentage;
+percentage = (winH*90)/100;
+
+var	height= percentage;
+	
+	document.getElementById('noiseWidgIframe').style.height= height+'px'; }
+	,1000);
+			
+
+	
+	
+	 
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    	
+		
+		
+		
+		<!--[if LTE IE 8]>
+			<link href="http://formstone.it/css/demo.ie.css" rel="stylesheet" type="text/css" media="all" />
+		<![endif]-->
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.2.css" />
+       <link type="text/css" rel="stylesheet" href="jquery-te-1.4.0.css">
+       <link type="text/css" rel="stylesheet" href="demo.css">
+       <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link href="Shifter-master/jquery.fs.shifter.css" rel="stylesheet" type="text/css" media="all" />
+		<script src="Shifter-master/jquery.fs.shifter.js"></script>
+		
+		<style>
+			.shifter .shifter-handle { margin: -5px 0 0; }
+			.shifter .shifter-navigation { background: #f9f9f9; padding: 100px 30px 30px 80px; }
+			.shifter .shifter-navigation a { color: #666; display: block; font-size: 18px; margin: 0 0 15px; }
+		</style>
+		
+		<script>
+			$(document).ready(function() {
+				$.shifter({
+					maxWidth: Infinity
+				});
+			});
+		</script>
+		
+		<!--[if LTE IE 9]>
+			<script src="ie/html5.js"></script>
+		<![endif]-->
+		<!--[if IE 9]>
+			<script src="ie/matchMedia.ie9.js"></script>
+		<![endif]-->
+		<!--[if LTE IE 8]>
+			<script src="ie/matchMedia.ie8.js"></script>
+		<![endif]-->
+	<style>
+	.jqte_tool.jqte_tool_22 .jqte_tool_icon {background-position: -441px 0;user-select: none;}
+	[type=file]{display:none}
+	</style>
+        
+		<!--<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+	<script src="editor/jquery-te-1.4.0.min.js" charset="utf-8"></script>
+	<script>
+		$(function(){
+			$('.jqte').jqte()
+			$('.jqte_toolbar').append('<div class="jqte_tool jqte_tool_22 unselectable" role="button"><a class="jqte_tool_icon unselectable"></a></div>')
+			$('.jqte_tool_22 a').click(function(){
+				$('[type=file]:enabled').click()
+			})
+			var droppedImage
+			$(document).on('drop','.jqte [contenteditable]',function(){
+				console.log(this,arguments)
+				if(droppedImage) {
+					$(droppedImage).remove()
+					droppedImage=undefined
+				}
+				setTimeout(function(){
+					document.execCommand('unselect')
+				},100)
+			})
+			$(document).on('dragstart','#images img',function(){
+				console.log(this,arguments)
+				droppedImage=this
+			}).on('dragend','#images img',function(){
+				console.log(this,arguments)
+			})
+			$(document).on('change','[type=file]',function(e){
+				var here=$(this)
+				here.parent().append(here.clone())
+				here.hide().prop('disabled',true)
+				$.each($(this).prop('files'),function(i,file){
+					var reader = new FileReader()
+					reader.onload = function (e) {
+						$('<img/>',{src:e.target.result}).css({maxHeight:200 }).appendTo(here.parent())
+					}
+					reader.readAsDataURL(file)
+				})
+				
+			})
+		})
+	</script>
+    
+    
+    
+    <style  type="text/css">
+@media screen and (max-width: 320px) {
+  .response { width:320px;height:475px;}
+	 .response form { max-width:100%; }
+
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+	 .response { width:360px;height:640px;}
+	 .response form { max-width:360px; }
+}
+@media screen and (min-width: 480px) and (max-width: 321px) {
+	 .response { width:100%;height:100%;}
+	 .response form { max-width:100%; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+	.response { width:100%;height:640px;}
+	 .response form { max-width:100%; }
+}
+@media (min-width:768px) and (max-width: 481px) {
+	.response { width:100%;height:640px;}
+	 .response form { max-width:100%; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+	.response { width:100%;height:640px;}
+	 .response form { max-width:100%; }
+}
+</style>
+    
+    
+    
+	</head>
+	<body class="gridlock demo shifter container">
+		<div data-role = "header">
+	 	<div class="ui-mini">
+          <ul id="menu">
+            <li><a onClick="window.location='fileBrowser.html'"><img width="6%" src="img/import.png" /></a></li>
+            <li><a onClick="window.location='share.html'"><img width="6%" src="img/share.png" /></a></li>
+            <li><a onClick="window.location='editor.html'"><img width="6%" src="img/add_paper.png" /></a></li>
+            <li><a onClick="window.location='index.html'"><img width="6%" src="img/FolderOpen.png" /></a></li>
+            <li><a onClick="window.location='delete.html'"><img width="6%" src="img/rec.png" /></a></li>
+          </ul>
+          <!-- <ul id="menu">
+            <li class="menuhead uhead"><a onClick="window.location='fileBrowser.html'"  style="">Import</a></li>
+            <li class="menuhead"><a href="#" >Share</a></li>
+            <li class="menuhead"><a onClick="window.location='add_new.html'" >Add Note</a></li>
+            <li class="menuhead uhead"><a onClick="window.location='open_flip.html'">Open</a></li>
+            <li  class="menuhead"><a href="#">Delete</a></li>
+          </ul>-->
+        </div>
+        </div>
+		<div class="shifter-page response">
+			<article class="row page">
+				<div class="mobile-full tablet-full desktop-8 desktop-push-2">
+					
+				
+					
+					<form>
+                        <textarea name="textarea" id="texta" class="jqte"></textarea>
+                        <input type="button" id="content" name="content" value="done" class="submitbut" onClick="textcont(this)">
+                    </form>
+                    <fieldset id="images">
+                        <input type="file" multiple accept="image/*">
+                    </fieldset>
+					
+				</div>
+			</article>
+			
+			
+		</div>
+        <div data-role="footer">
+      <span style="width:60%;float:left;padding:1%">
+              <a href="#" data-role="button" data-icon="back" data-iconpos="left"  class='fa fa-check my_icon_class' onClick="window.history.back();">Prev</a> 
+            <a href="#" data-role="button" data-icon="forward" data-iconpos="right" class='fa fa-check my_icon_class' onClick="window.history.forward();">Next</a> 
+            </span>
+            <span style="width:30%;float:right;padding-right:10px;">
+                <input type="search" name="search" id="search" placeholder="Search...">
+                </span>
+      </div>
+      </div>
+	</body>
+       
+		<script src="phonegap.js"></script>
+
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+   		<script type="text/javascript" src= "js/jquery.mobile-1.4.2.js"></script>
+        <script>
+applyVerticalCentering = function() {
+    $(this).on('pagebeforeshow',function(e,data){
+        $('[data-vertical-centred]').hide();
+    });
+    
+    $(this).on('pageshow resize',function(e,data){    
+        $('[data-vertical-centred]').each(function(index){
+            var _this = $(this);
+            _this.css('margin-top',
+                      ($(window).height() -
+                       $('header:visible').height() -
+                       $('footer:visible').height() -
+                       _this.outerHeight() - 40)/2) ;
+            _this.show();
+        });
+    });
+}();
+
+</script>
+    <script>
+function textcont(){
+var cont=$('#texta').val();
+alert(cont);
+}
+</script>
+</html>

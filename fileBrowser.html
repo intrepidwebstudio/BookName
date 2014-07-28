@@ -1,0 +1,169 @@
+
+<html>
+<head>
+ <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.2.css" />
+       
+       <link type="text/css" rel="stylesheet" href="jquery-te-1.4.0.css">
+       <link type="text/css" rel="stylesheet" href="demo.css">
+       <link type="text/css" rel="stylesheet" href="css/style.css">
+        <title>Hello World</title><script type="text/javascript" >
+// Wait for PhoneGap to load
+function onLoad() {
+	
+	
+
+document.addEventListener("deviceready", onDeviceReady(), false);
+// PhoneGap is ready
+}
+function onDeviceReady() {
+// Do cool things here...
+
+//getImage();
+}
+function getImage() {
+
+/*navigator.camera.getPicture(onCapturePhotoSuccess, onCapturePhotoError,{ quality: 80, 
+        destinationType: navigator.camera.DestinationType.DATA_URL,
+        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+    });	*/
+// Retrieve image file location from specified source
+this.photoDestinationType=navigator.camera.DestinationType;
+var source =  navigator.camera.PictureSourceType.PHOTOLIBRARY;
+navigator.camera.getPicture(successFn, errorFn, { quality: 50,
+        destinationType: this.photoDestinationType.FILE_URI,
+        sourceType: source,
+        mediaType: navigator.camera.MediaType.ALLMEDIA  });
+}
+function successFn(imageURI) {   
+
+alert(imageURI);
+	
+	document.getElementById('imageurl').value=imageURI;
+    //moveFile(imageURI);
+}
+
+
+function errorFn(message) {
+    alert("Sorry the file selection failed please try again");
+}
+function moveFile(file) {
+	
+	window.resolveLocalFileSystemURI(file, resolveOnSuccess, resOnError);
+}
+function resolveOnSuccess(entry){
+	
+	
+	var myFolderApp ="myappfolder";
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
+	fileSys.root.getDirectory(myFolderApp,{create:true, exclusive: false},function(directory) { 
+	var filename = document.getElementById('filename').value;
+	
+	var ext = document.getElementById('ext');
+	var extension1 = ext.options[ext.selectedIndex].value;
+	
+	var newFileName1 = filename + "." + extension1;
+	
+	entry.copyTo(directory,newFileName1,successMove, resOnError);
+	},
+	resOnError);
+},
+resOnError);
+
+
+}
+function successMove(){
+alert("Your file has been successfully imported");
+window.location("index.html");
+}
+function resOnError(){
+alert("Oops file droped please try again");
+window.location("index.html");
+}
+
+function saveData() {
+	
+	if(document.getElementById('filename')!='' || document.getElementById('filename')!=null){
+	
+var imageurl = document.getElementById('imageurl').value
+
+moveFile(imageurl);
+	}else{
+		alert('Filename field Mandatory');
+	}
+}
+
+</script>
+</head>
+<body onLoad="onLoad()" >
+<div data-role="page">
+<div data-role = "header">
+	 	<div class="ui-mini">
+          <ul id="menu">
+            <li><a onClick="window.location='fileBrowser.html'"><img width="8%" src="img/import1.png" /></a></li>
+            <li><a onClick="window.location='share.html'"><img width="8%" src="img/share.png" /></a></li>
+            <li><a onClick="window.location='editor.html'"><img width="8%" src="img/add_paper.png" /></a></li>
+            <li><a onClick="window.location='index.html'"><img width="8%" src="img/FolderOpen.png" /></a></li>
+            <li><a onClick="window.location='delete.html'"><img width="8%" src="img/delfile.png" /></a></li>
+          </ul>
+          <!-- <ul id="menu">
+            <li class="menuhead uhead"><a onClick="window.location='fileBrowser.html'"  style="">Import</a></li>
+            <li class="menuhead"><a href="#" >Share</a></li>
+            <li class="menuhead"><a onClick="window.location='add_new.html'" >Add Note</a></li>
+            <li class="menuhead uhead"><a onClick="window.location='open_flip.html'">Open</a></li>
+            <li  class="menuhead"><a href="#">Delete</a></li>
+          </ul>-->
+        </div>
+        </div>
+<div data-role="content" class="bink center">
+<button onClick="getImage();" class="file_selection">Select your file</button><br><br>
+<input type="text" placeholder="Name of the Document" id="filename"><br><br>
+<input type="hidden"  id="imageurl" ><br><br>
+<select id="ext" name="extension">
+<option value="jpg">Image</option>
+<option value="pdf">pdf</option>
+<option value="doc">Word Document</option>
+<option value="mp3">Audio</option>
+<option value="avi">Video</option>
+</select><br><br>
+<button onClick="saveData();" class="subfinal">upload</button>
+</div>
+ <div data-role="footer">
+      <span class="loading">
+      <img src="img/search.png" onClick="alert()">
+      </span>
+      <span style="width:50%;float:left;padding:1%">
+              <a href="#" data-role="button"   class='fa fa-check left' onClick="window.history.back();"><img src="img/left.png"></a> 
+            <a href="#" data-role="button"  class='fa fa-check right' onClick="window.history.forward();"><img src="img/right.png"></a> 
+            </span>
+            
+            <span style="width:30%;float:right;margin-right:45px;margin-top:1%">
+                <input type="search" name="search" id="search" placeholder="Search..." class="search">
+                </span>
+      </div>
+      </div>
+      </div>
+</div>
+<script src="phonegap.js"></script>
+
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src= "js/jquery.mobile-1.4.2.js"></script>
+</body>
+<script>
+	$(document).ready(function(e) {
+        $('.left').removeClass('ui-btn');
+		$('.left').removeClass('ui-shadow');
+		$('.right').removeClass('ui-btn');
+		$('.right').removeClass('ui-shadow');
+    });
+	</script>
+</html>

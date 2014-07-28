@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Show Local Folder File List</title>
+<!-- <script type="text/javascript" src="phonegap.js"></script>-->
+       <script type="text/javascript" src="js/jquery.js"></script><!--
+       <script type="text/javascript" src= "js/jquery.mobile-1.4.2.js"></script>
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+</head>
+<body onLoad="getfile()">
+ <input type="hidden" id="getvalue">
+ <div class="idd"> 
+ 
+ 
+ </div>
+ <script>
+ function getfile(){
+	// alert('hi');
+  var files;
+  var uuu=[];
+$.ajax({
+    url: "libtest/",
+    success: function (data) {
+		$('#getvalue').val(data);
+        //files = txt.split('<A href="');
+		var aa=$('#getvalue').val();
+		var spl=aa.split(/">|\</);
+		//alert(spl[132]);
+		var splleg=spl.length-23;
+		//alert(splleg);
+		for(i=72;i<=splleg;i++){
+			var stri='/address>';
+			if(spl[i]!='/address>'){
+				uuu.push(spl[i]);
+			//alert(spl[i]);
+			//alert(i);
+			//alert(spl[i]);
+			//alert($('.idd').appendTo(html("<span class='outuu'><img src='img/app_addnote3.png'></span>")));
+			
+			i=i+19;
+			}
+			//alert(i);
+			$("<span id=#+i><img src='img/app_addnote3.png'></span>").appendTo("div");
+			$('img').css({"width":"20%","height":"20%"});
+		}
+		//var uu=uuu.split(',');
+		//alert(uu);
+		
+		
+	}
+		
+});
+ }
+ </script>
+</body>
+</html> 

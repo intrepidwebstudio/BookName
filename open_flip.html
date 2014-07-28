@@ -1,0 +1,372 @@
+
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>File Transfer Example</title>
+ 				<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.2.css" />
+           
+               <link type="text/css" rel="stylesheet" href="css/style.css">
+               
+               <link type="text/css" rel="stylesheet" href="jquery-te-1.4.0.css">
+               <link type="text/css" rel="stylesheet" href="demo.css">
+               <link type="text/css" rel="stylesheet" href="css/style.css">
+               <!---------------------------------start flip here---------------------------------->
+                <link type="text/css" href="flip_book/css/style.css" rel="stylesheet">
+				<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Play:400,700">
+                <!--------------------------------end flip here------------------------------------>
+               <!---------------------------------start pdf css------------------------------------>
+               <link rel="stylesheet" href="final_pdf/test.css"></link>
+              <!---------------------------------end css script-------------------------------------->
+				<!--<script src="js/jquery.js"></script>-->
+                <script src="js/jquery.mobile-1.4.2.js"></script>               
+                <script src="phonegap.js"></script>
+                
+                	<!----------------------------------start flip script here----------------------------->
+                     <script src="flip_book/js/jquery.js"></script>
+					<script src="flip_book/js/turn.js"></script>              
+                    <script src="flip_book/js/jquery.fullscreen.js"></script>
+                    <script src="flip_book/js/jquery.address-1.6.min.js"></script>
+                    <script src="flip_book/js/onload.js"></script>
+                    <!-----------------------------------end flip script here------------------------------>
+                
+
+					<!---------------------------------start pdf script------------------------------------>
+                    <script src="final_pdf/test.js"></script>
+					<script src="final_pdf/lib/pdf.js"></script>
+                    <script src="final_pdf/lib/fonts.js"></script>
+                    <script src="final_pdf/lib/cffStandardStrings.js"></script>
+                    <script src="final_pdf/lib/Encodings.js"></script>
+                    <script src="final_pdf/lib/glyphlist.js"></script>
+                    <!---------------------------------end pdf script-------------------------------------->
+	<style>	
+	    html,body {
+          margin: 0;
+          padding: 0;
+		  overflow:auto !important;
+        }
+	</style>
+ <script>
+	function onLoad(){
+	var bookname = localStorage.bookname;
+	alert(bookname);
+	bookname1 = "'"+bookname+"'"
+	
+	
+	/*var myFolderApp ="myappfolder";
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
+	fileSys.root.getDirectory(myFolderApp,{create:true, exclusive: false},function(directory) { 
+	
+	var temp = directory.fullPath;
+	var path =  temp + "/" + bookname;
+	alert(path);*/
+	load(bookname1);
+	
+
+	
+	/*}, function(error){
+	alert(error.code);	
+	});
+	
+},function(error){
+	
+	alert(error.code);
+});
+*/
+	}
+	</script>
+</head>
+<!--onLoad="onLoad()" -->
+<body onLoad="load('final_pdf/testing.pdf')" >
+<div data-role = "page" id="page2" >
+		
+<div data-role="content" id="content">
+
+<!-- BEGIN FLIPBOOK STRUCTURE -->  
+<div id="fb5-ajax">	
+         
+         
+      <!-- BEGIN HTML BOOK -->      
+      <div data-current="book5" class="fb5" id="fb5">      
+            
+            <!-- PRELOADER -->
+            <div class="fb5-preloader">
+            <div id="wBall_1" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            <div id="wBall_2" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            <div id="wBall_3" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            <div id="wBall_4" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            <div id="wBall_5" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            </div>      
+      
+                           
+            <!-- BACKGROUND FOR BOOK -->  
+            <div class="fb5-bcg-book"></div>                      
+          
+            <!-- BEGIN CONTAINER BOOK -->
+            <div id="fb5-container-book">
+     
+                <!-- BEGIN deep linking -->  
+                <section id="fb5-deeplinking">
+                     <ul>
+                          <li data-address="page1" data-page="1"></li>
+                          <li data-address="page2-page3" data-page="2"></li>
+                          <li data-address="page2-page3" data-page="3"></li>
+                          <li data-address="page4-5" data-page="4"></li>
+                      
+                     </ul>
+                 </section>
+                <!-- END deep linking -->  
+            
+                
+                <!-- BEGIN ABOUT -->
+                <section id="fb5-about">
+                
+              
+              
+              
+              
+                </section>
+                <!-- END ABOUT -->
+                
+                
+                <!-- BEGIN BOOK -->
+                <div id="fb5-book">
+                
+                          
+                <!-- BEGIN PAGE 1-->          
+                <div style="background-image:url()" class="">
+                       
+                     <!-- begin container page book --> 
+                     <div class="fb5-cont-page-book">
+                       
+                                    <!-- description for page  --> 
+                                    <div class="fb5-page-book">
+                                       <div id="fb5-cover">
+                                          <ul>Welcome To Wisdom
+                                         </ul>
+                                         <img src="" id="fb5-logo-cover" alt="wisdom">		
+                                      </div>
+                                   </div> 
+                                   <!-- end description for page  -->           
+                                    
+                                  <!-- number page and title -->                
+                                  <div class="fb5-meta">
+                                        <span class="fb5-description"></span>
+                                        <span class="fb5-num"></span>
+                                  </div>
+                                  <!-- end number page and title  -->  
+                      </div> 
+                      <!-- end container page book --> 
+                        
+                </div>
+                <!-- END PAGE 1 -->
+                  
+                  
+                  
+                  
+                <!-- BEGIN PAGE 2-->           
+                <div style="background-image:url()" class="">
+                       
+                     <!-- begin container page book --> 
+                     <div class="fb5-cont-page-book">
+                       
+                         <!-- description for page from wisdom --> 
+                        <div class="fb5-page-book" id="first">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div>
+                            <span id="pageNumber"></span> of <span id="numPages"></span>
+                            <a href="javascript:prevPage()">Previous</a> |
+                            <a href="javascript:nextPage()">Next</a>
+                            </div>
+                            <div id="viewer" width="816" height="1056" style="width:100%;overflow-x:hidden !important"> 
+                                <canvas id="canvas" width="816" height="1056"  style="width:100%;overflow-x:hidden !important"></canvas>  
+                            </div> 
+                        </div> 
+                                  
+                       
+                        
+                        
+                     </div> <!-- end container page book --> 
+                        
+                </div>
+                <!-- END PAGE 2 -->              
+                            
+                
+                
+                <!-- BEGIN PAGE 3 -->          
+                <div style="background-image:url(pages/3.jpg)" class="">
+                       
+                     <!-- container page book --> 
+                     <div class="fb5-cont-page-book">
+                       
+                         <!-- description for page --> 
+                         <div class="fb5-page-book">
+                                         
+                         </div> 
+                                  
+                        <!-- number page and title  -->                
+                        <div class="fb5-meta">
+                                <span class="fb5-description">Collection 2014</span>
+                                <span class="fb5-num">2</span>
+                         </div> 
+                        
+                        
+                     </div> <!-- end container page book --> 
+                        
+                </div>
+                <!-- END PAGE 3 -->           
+                                        
+                  
+                  
+              </div>
+              <!-- END BOOK -->
+                
+             </div>
+             <!-- END CONTAINER BOOK -->
+           <!-- BEGIN FOOTER -->
+        <div id="fb5-footer">
+        
+            <div class="fb5-bcg-tools"></div>
+             
+            
+            
+            <div class="fb5-menu" id="fb5-center">
+                <ul>                             
+                    <li>
+                        <a title="ZOOM IN" class="fb5-zoom-in"></a>
+                    </li>                               
+                    
+                    <!-- icon_zoom_out -->
+                     
+                    <li>
+                        <a title="ZOOM OUT " class="fb5-zoom-out"></a>
+                    </li>                                
+                    
+                    <!-- icon_zoom_auto -->
+                    <li>
+                        <a title="ZOOM AUTO " class="fb5-zoom-auto"></a>
+                    </li>                                
+                    
+                    <!-- icon_zoom_original -->
+                    <li>
+                        <a title="ZOOM ORIGINAL (SCALE 1:1)" class="fb5-zoom-original"></a>
+                    </li>
+                                     
+                    
+                                             
+                    
+                    <!-- icon_home -->
+                    <li>
+                        <a title="HOME PAGE " class="fb5-home" href="index.html"></a>
+                    </li>
+                                    
+                </ul>
+            </div>
+            
+            
+            
+            
+        
+        </div>
+        <!-- END FOOTER -->
+        
+
+
+   </div>
+   <!-- END HTML BOOK -->
+
+
+    <!-- CONFIGURATION FLIPBOOK -->
+    <script>    
+    jQuery('#fb5').data('config',
+    {
+    "page_width":"550",
+    "page_height":"715",
+	"email_form":"office@somedomain.com",
+    "zoom_double_click":"1",
+    "zoom_step":"0.06",
+    "double_click_enabled":"true",
+    "tooltip_visible":"true",
+    "toolbar_visible":"true",
+    "gotopage_width":"30",
+    "deeplinking_enabled":"true",
+    "rtl":"false",
+    'full_area':'true'
+    })
+    </script>
+
+
+</div>
+<!-- END FLIPBOOK STRUCTURE -->    
+
+
+
+
+
+<!--<div class="books">
+entries[i].name
+<hr>
+</div>-->
+</div>
+	
+</div>
+</body>
+
+<script>
+var first = getUrlVars()["book_name"];
+ 
+alert(first);
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+</script>
+<script>
+function onLoad(){
+	
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+   fileSystem.root.getDirectory("MyAppFolder", {
+           create: true
+       }, function(directory) {
+
+        var directoryReader = directory.createReader();
+        directoryReader.readEntries(function(entries) {
+            
+			
+        }, function (error) {
+            alert(error.code);
+        });
+
+       } );
+}, function(error) {
+   alert("can't even get the file system: " + error.code);
+});
+}
+</script>
+</html>

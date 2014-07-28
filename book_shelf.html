@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.2.css" />
+       
+       <link type="text/css" rel="stylesheet" href="jquery-te-1.4.0.css">
+       <link type="text/css" rel="stylesheet" href="demo.css">
+       <link type="text/css" rel="stylesheet" href="css/style.css">
+		
+       <title>Wisdom Notes</title>
+            
+       <script type="text/javascript" src="phonegap.js"></script>
+       <script type="text/javascript" src="js/jquery.js"></script>
+       <script type="text/javascript" src= "js/jquery.mobile-1.4.2.js"></script>
+    </head>
+    <body>
+    
+    <!-- Login page -->
+    
+    <input type="button" onClick="fun('libtest')">
+    <script>
+	function fun(foldername){
+		var myObject, f, filesCount;
+      myObject = new ActiveXObject("Scripting.FileSystemObject");
+      f = myObject.GetFolder(foldername);
+      filesCount = f.files.Count;
+      document.write("The number of files in this folder is: " + filesCount);
+	}
+	</script> 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+applyVerticalCentering = function() {
+    $(this).on('pagebeforeshow',function(e,data){
+        $('[data-vertical-centred]').hide();
+    });
+    
+    $(this).on('pageshow resize',function(e,data){    
+        $('[data-vertical-centred]').each(function(index){
+            var _this = $(this);
+            _this.css('margin-top',
+                      ($(window).height() -
+                       $('header:visible').height() -
+                       $('footer:visible').height() -
+                       _this.outerHeight())/2);
+            _this.show();
+        });
+    });
+}();
+
+</script>
+      
+       
+       
+        
+              
+         <script>
+		 $(document).on("pageinit","#page1",function() {
+			 
+			 var page = 1;
+			$(document).on("swipeleft", function() {
+				page++;
+				if(page > 3)(page = 3);
+				$.mobile.changePage("#page" + page, { reverse: false, transition: "flip" });
+			});
+			$(document).on("swiperight", function() {
+				page--;
+				if(page < 1)(page = 1);
+				$.mobile.changePage("#page" + page, { reverse: true, transition: "flip" });
+			});
+			
+			
+			//$('#atstart').trigger('click');
+		 });
+		 
+		  
+		 
+		 </script>
+       
+       <!-- text editor-->
+        <script>
+			/*$(document).ready(function(e) {
+				if (window.XMLHttpRequest)
+			{// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp=new XMLHttpRequest();
+			}
+			else
+			{// code for IE6, IE5
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.open("GET","demo_test.txt",false);
+			xmlhttp.send();
+			xmlDoc=xmlhttp.responseText;
+			$('#myDiv').html(xmlDoc);
+			});*/
+		</script>
+
+        <div id="myDiv"></div>
+
+
+    </body>
+     
+        
+       
+       
+    
+</html>
