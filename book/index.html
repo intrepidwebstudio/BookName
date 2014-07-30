@@ -26,6 +26,8 @@ window.location="image/index.html";
 	}
 else if(extension=='pdf')
 {
+		fullpath=fullpath.replace("file://","");
+
  window.location="pdf_file/send.html#"+fullpath;
 	}
 else if(extension=='docx')
