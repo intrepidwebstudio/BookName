@@ -52,7 +52,7 @@ function loadPlugin(pluginName, callback) {
 
 function loadDocument(documentUrl) {
 	
-	alert(documentUrl);
+	//alert(documentUrl);
 	
 	location1=documentUrl;
 	
