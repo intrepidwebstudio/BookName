@@ -5,7 +5,8 @@
 <title>Untitled Document</title>
 <script type="text/javascript"> 
 
-var fullpath = localStorage.bookname;  //"asasdvas/sadvasvas/dvasdvasdvasvd/asdvasdvasdv/adsvasdvasdv/asdv/asdvasdva/sdvasdv/safasdf.mp4d"; 
+//var fullpath = localStorage.bookname;  //"asasdvas/sadvasvas/dvasdvasdvasvd/asdvasdvasdv/adsvasdvasdv/asdv/asdvasdva/sdvasdv/safasdf.mp4d";
+fullpath = "asasdvas/sadvasvas/dvasdvasdvasvd/asdvasdvasdv/adsvasdvasdv/asdv/asdvasdva/sdvasdv/safasdf.pdf";
 alert (fullpath);
 localStorage.Fullpath = fullpath;	
 	
@@ -29,7 +30,7 @@ else if(extension=='pdf')
 		fullpath=fullpath.replace("file://","");
 		alert(fullpath);
 
- window.location="pdf_file/send.html#"+fullpath;
+ window.location="pdf_file/send.html";
 	}
 else if(extension=='docx')
 {
