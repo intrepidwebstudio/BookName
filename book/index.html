@@ -7,7 +7,7 @@
 
 var fullpath = localStorage.bookname;  //"asasdvas/sadvasvas/dvasdvasdvasvd/asdvasdvasdv/adsvasdvasdv/asdv/asdvasdva/sdvasdv/safasdf.mp4d";
 //fullpath = "asasdvas/sadvasvas/dvasdvasdvasvd/asdvasdvasdv/adsvasdvasdv/asdv/asdvasdva/sdvasdv/safasdf.pdf";
-alert (fullpath);
+//alert (fullpath);
 localStorage.Fullpath = fullpath;	
 	
 var split_array =fullpath.split('/');
@@ -27,8 +27,8 @@ window.location="image/index.html";
 	}
 else if(extension=='pdf')
 {
-		fullpath=fullpath.replace("file://","");
-		alert(fullpath);
+		//fullpath=fullpath.replace("file://","");
+		//alert(fullpath);
 
  window.location="pdf_file/send.html";
 	}
