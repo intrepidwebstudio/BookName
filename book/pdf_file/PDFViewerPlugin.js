@@ -217,13 +217,15 @@ function PDFViewerPlugin(loc) {
 			location1=loc;
 			
 		//	alert(location1+'kkkk');
-
+				
+				alert('pdfviewerplugin.js');
 			
             PDFJS.workerSrc = "./pdf.worker.js";
+			alert('stuck');
             PDFJS.getDocument(location1).then(function loadPDF(doc) {
                 pdfDocument = doc;
                 container = viewContainer;
-
+				alert('create page - success');
                 for (i = 0; i < pdfDocument.numPages; i += 1) {
                     pdfDocument.getPage(i + 1).then(createPage);
                 }

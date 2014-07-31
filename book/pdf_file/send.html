@@ -14,16 +14,19 @@
 //			 window.location.hash = '#egc.pdf';
 
 //alert ("test");
+//\xampp\htdocs\b\pdf_file
 
 var location1=localStorage.bookname;
+//var location1='/C:/xampp/htdocs/b/pdf_file/egc.pdf';
 
+//var location1='egc.pdf';
  //location1=location1.slice(1);
 
-//alert(location1);
+alert(location1);
 
 location1=location1.replace("file://","");
 //alert(location1+'!!!!!!!!!!!!!!!!!!!');
-
+alert(location1+'------replace');
 //location1='all.pdf';
 loadDocument(location1);
 </script>
@@ -106,7 +109,7 @@ var context = canvas.getContext('2d');
 // save canvas image as data url (png format by default)
 var dataURL = canvas.toDataURL();	  
 
-//alert(dataURL);
+alert(dataURL);
 
 session.screens.push({"name":dataURL});
 //alert('ok');
@@ -115,13 +118,10 @@ session.screens.push({"name":dataURL});
 // Converting the JSON string with JSON.stringify 
 // then saving with localStorage in the name of session
 localStorage.setItem('session', JSON.stringify(session));
-
 localStorage.setItem("condition","success");
-
-
 redirect();
 
-},5000);
+},10000);
 
 
 

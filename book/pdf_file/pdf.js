@@ -147,6 +147,10 @@ function assert(cond, msg) {
 // Combines two URLs. The baseUrl shall be absolute URL. If the url is an
 // absolute URL, it will be returned as is.
 function combineUrl(baseUrl, url) {
+	
+	alert('URLLLL');
+	alert(baseUrl+'--------'+url);
+	
   if (!url)
     return baseUrl;
   if (url.indexOf(':') >= 0)
@@ -3876,6 +3880,8 @@ PDFJS.getDocument = function getDocument(source,
   var params = {};
   for (var key in source) {
     if (key === 'url' && typeof window !== 'undefined') {
+		
+		alert(source[key]+'--source key');
       params[key] = combineUrl(window.location.href, source[key]);
       continue;
     }

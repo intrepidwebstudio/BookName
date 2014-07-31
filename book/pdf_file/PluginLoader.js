@@ -81,6 +81,7 @@ function loadDocument(documentUrl) {
 
         window.onload = function () {
             if (Plugin) {
+				alert('pluginLoader.js');
                 viewer = new Viewer(new Plugin(location1));
             }
         };
