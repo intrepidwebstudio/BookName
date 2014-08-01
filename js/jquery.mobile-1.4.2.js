@@ -108,7 +108,7 @@
 		pageContainer: $(),
 
 		//enable cross-domain page support
-		allowCrossDomainPages: false,
+		allowCrossDomainPages: true,
 
 		dialogHashKey: "&ui-state=dialog"
 	});
