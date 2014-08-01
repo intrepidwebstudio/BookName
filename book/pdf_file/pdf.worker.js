@@ -18,7 +18,6 @@
 // Initializing PDFJS global object (if still undefined)
 
 
-
 if (typeof PDFJS === 'undefined') {
   (typeof window !== 'undefined' ? window : this).PDFJS = {};
 }
