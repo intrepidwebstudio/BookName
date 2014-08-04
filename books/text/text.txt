@@ -1,0 +1,318 @@
+http://www.onextrapixel.com/examples/subtle-zoom-animations-on-images/index.html
+
+
+9840219185
+
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('1','m34','Class Notes','class_notes','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('2','m34','Class Notes','class_notes','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('3','m34','Class Notes','class_notes','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('4','m34','Class Notes','class_notes','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('5','m34','Class Notes','class_notes','1','1','1','1','y');
+
+
+m38 completed
+
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('1','m19','Add Single Student','single_student','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('2','m19','Add Single Student','single_student','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('3','m19','Add Single Student','single_student','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('4','m19','Add Single Student','single_student','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('5','m19','Add Single Student','single_student','1','1','1','1','y');
+
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('1','m19','Add Bulk Students','multi_student','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('2','m19','Add Bulk Students','multi_student','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('3','m19','Add Bulk Students','multi_student','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('4','m19','Add Bulk Students','multi_student','1','1','1','1','y');
+INSERT INTO `m_module`(`IM_Controls_ISno`, `CModule_Id`, `CModule_Name`, `CModule_Page`, `IView`, `IAdd`, `IEdit`, `IDelete`,`CStatus`) VALUES ('5','m19','Add Bulk Students','multi_student','1','1','1','1','y');
+
+3930
+
+    <title>Calendar | <?=$_SESSION['school']['CSchool_Name']?></title>
+
+<link href="../bootstrap/css/customize.css" rel="stylesheet" >
+
+            <ul class="cus-breadcrumbs">
+           		<li><a  href="calendar.php">Calendar</a></li>
+            </ul>
+
+
+
+
+    <link rel="stylesheet" href="../bootstrap/data-table/css/data-table.bootsrap.css">
+
+class = table table-striped table-bordered table-condensed" id="data_table
+
+class no-sort
+
+
+    <!-- data table
+    ================================================== -->
+    <script type="text/javascript" src="../bootstrap/data-table/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../bootstrap/data-table/js/DT_bootstrap.js"></script>
+	
+
+dataTableDTinit()
+
+$('.inputmask').inputmask()
+
+
+col1    col2
+10	a
+10	b
+10	c
+9	a
+9	b
+9	c
+	
+
+
+col1!=10   col2!=b
+
+
+
+<link href="../alert/themes/alertify.core.css" rel="stylesheet">
+<link href="../alert/themes/alertify.default.css" rel="stylesheet">
+
+<script type="text/javascript" src="../alert/lib/alertify.js"></script>  
+
+resetAlert();
+resetConfirm();
+
+
+
+Select * from Orders where orderid not in 
+
+(SELECT distinct OrderID  FROM [Orders] where employeeid = 5 and shipperid=3)
+
+
+
+//CORE_SCRIPT JS
+
+  <script type="text/javascript" src="../js/core_script.js"></script>  
+
+
+
+
+
+
+
+<link href="../bootstrap/bootsrap-editable/bootstrap-editable.css" rel="stylesheet"><!-- for table editable-->
+ <script src="../bootstrap/bootsrap-editable/bootstrap-editable.js"></script><!-- for table editable--> 
+<!-- for table editable -->
+						$.fn.editable.defaults.mode = 'popup';
+						$.fn.editable.defaults.placement ='left';
+						//submitting text box
+						$('.editable.editable-click').editable({
+						emptytext:'0.00',	
+						url: update_amount_url,
+						success: function(response, newValue) { 
+						//alert(response);
+						}
+						});
+
+<a href="#" class="editable editable-click" data-type="text" data-pk="<?=$row['ISno']?>" data-name="<?=$amount_type?>" ><?=$amount?></a>
+
+
+
+
+
+
+//date compare   set
+
+var from_date_check = $('#assign_date').val();
+var to_date_check = $('#complete_date').val();
+
+var result_date = compare_dates(from_date_check,to_date_check); // return true or false 
+
+
+
+
+
+
+
+
+
+
+
+
+
+		$('#DLeave_Date_From').datepicker({
+				format : 'dd-mm-yyyy',
+				minDate:0,
+		});
+		
+		
+		
+			function change_date()
+			{
+			var newdate = $('#DLeave_Date_From').val();
+			$('#DLeave_Date_To').val('');
+				$('#DLeave_Date_To').datepicker({
+					format : 'dd-mm-yyyy',
+					minDate: newdate,
+					startDate: newdate,
+				 }); 
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Time Table
+
+
+<?php 
+$timetable=mysql_query("select CDay from m_class_timetable where IStandard='".$_SESSION['current']['IStandard']."' and CSection='".$_SESSION['current']['CSection']."'  and CStatus='y' GROUP BY CDay")or die(mysql_error());
+
+
+$count_days=mysql_num_rows($timetable);
+
+if($count_days>0)
+{
+	while($day_row=mysql_fetch_array($timetable)){
+		$CDay[]=$day_row['CDay'];
+	}
+$period=mysql_query("SELECT IPeriod,CSubject,ILunch_Period_After FROM m_class_timetable WHERE IStandard='".$_SESSION['current']['IStandard']."' and CSection='".$_SESSION['current']['CSection']."' and CStatus='y' GROUP BY IPeriod ORDER BY IPeriod") or die(mysql_error());
+while($period_row=mysql_fetch_array($period)){
+	$IPeriod[]=$period_row['IPeriod'];
+	$CSubject[]=$period_row['CSubject'];
+	$ILunch_Period_After=$period_row['ILunch_Period_After'];
+}
+ ?>                                  
+
+
+
+
+$CDay[]
+$IPeriod[]
+$CSubject[]
+$sub_day[]
+$sub[]
+$periods[]
+<table class="table table-bordered">
+                                   <thead>
+                                   <th>Days</th>
+                                   <?php
+								   for($i=0;$i<count($IPeriod);$i++) { 
+									?>
+                                   <th><?=$IPeriod[$i]?></th>
+                                   <?php if($ILunch_Period_After==$IPeriod[$i]){ ?>
+								   <th width="100"></th>
+								   <?php }//if ?>
+                                   <?php } //$i?>
+                                   </thead>		
+                                   <tbody>
+                                   <?php
+								    $subjects=mysql_query("SELECT CDay,CSubject,ILunch_Period_After,IPeriod FROM m_class_timetable WHERE IStandard='10' and CSection='a' and CStatus='y' ORDER BY IPeriod") or die(mysql_error());
+									while($subject_row=mysql_fetch_array($subjects)){
+										$sub_day[]=$subject_row['CDay'];
+										$sub[]=$subject_row['CSubject'];
+										$lunch=$subject_row['ILunch_Period_After'];
+										$periods[]=$subject_row['IPeriod'];
+									}
+								   for($d=0;$d<count($CDay);$d++) { 
+								   ?>
+                                   <tr>
+                                   <td><?=strtoupper($CDay[$d])?></td>
+                                   <?php
+								   for($s=0;$s<count($sub_day);$s++){
+								   if($sub_day[$s]==$CDay[$d]){
+								   ?>
+                                   <td><?=$sub[$s]?></td>
+                                   <?php if($lunch==$periods[$s]){ ?>
+								   <th>Lunch</th>
+								   <?php }//if ?>
+                                   <?php 
+								   }
+								   }// while ?>
+                                   </tr>
+                                   <?php } // while ?>
+                                   </tbody>
+                                   </table>
+
+
+
+
+
+<script>
+	function printpage(divID) {
+            //Get the HTML of div
+            var divElements = document.getElementById(divID).innerHTML;
+            //Get the HTML of whole page
+            var oldPage = document.body.innerHTML;
+
+            //Reset the page's HTML with div's HTML only
+            document.body.innerHTML = 
+              "<html><head><title></title></head><body>" + 
+              divElements + "</body>";
+			//document.getElementById('help_text').style.display='none';
+            //Print Page
+            window.print();
+            //Restore orignal HTML
+            document.body.innerHTML = oldPage;
+        }
+<!--}-->
+</script>
+
+	
+
+
+ <!-- for ajax session purpose-->
+        <input type="hidden" id="IView" value="<?=$_VIEW?>" />
+        <input type="hidden" id="IAdd" value="<?=$_ADD?>" />
+        <input type="hidden" id="IEdit" value="<?=$_EDIT?>" />
+        <input type="hidden" id="IDelete" value="<?=$_DELETE?>" />
+
+
+
+
+
+
+
+
+
+$objValidation = $objPHPExcel->getActiveSheet()->getCell('M2')->getDataValidation();
+$objValidation->setType( PHPExcel_Cell_DataValidation::TYPE_LIST );
+$objValidation->setErrorStyle( PHPExcel_Cell_DataValidation::STYLE_INFORMATION );
+$objValidation->setAllowBlank(false);
+$objValidation->setShowInputMessage(true);
+$objValidation->setShowErrorMessage(true);
+$objValidation->setShowDropDown(true);
+$objValidation->setErrorTitle('Input error');
+$objValidation->setError('Value is not in list.');
+$objValidation->setPromptTitle('Pick from list');
+$objValidation->setPrompt('Please pick a value from the drop-down list.');
+$objValidation->setFormula1('"Item A,Item B,Item C"');
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?added=a%3A101%3A%7Bi%3A0%3Bs%3A3%3A"100"%3Bi%3A1%3Bs%3A3%3A"101"%3Bi%3A2%3Bs%3A3%3A"102"%3Bi%3A3%3Bs%3A3%3A"103"%3Bi%3A4%3Bs%3A3%3A"104"%3Bi%3A5%3Bs%3A3%3A"105"%3Bi%3A6%3Bs%3A3%3A"106"%3Bi%3A7%3Bs%3A3%3A"107"%3Bi%3A8%3Bs%3A3%3A"108"%3Bi%3A9%3Bs%3A3%3A"109"%3Bi%3A10%3Bs%3A3%3A"110"%3Bi%3A11%3Bs%3A3%3A"111"%3Bi%3A12%3Bs%3A3%3A"112"%3Bi%3A13%3Bs%3A3%3A"113"%3Bi%3A14%3Bs%3A3%3A"114"%3Bi%3A15%3Bs%3A3%3A"115"%3Bi%3A16%3Bs%3A3%3A"116"%3Bi%3A17%3Bs%3A3%3A"117"%3Bi%3A18%3Bs%3A3%3A"118"%3Bi%3A19%3Bs%3A3%3A"119"%3Bi%3A20%3Bs%3A3%3A"120"%3Bi%3A21%3Bs%3A3%3A"121"%3Bi%3A22%3Bs%3A3%3A"122"%3Bi%3A23%3Bs%3A3%3A"123"%3Bi%3A24%3Bs%3A3%3A"124"%3Bi%3A25%3Bs%3A3%3A"125"%3Bi%3A26%3Bs%3A3%3A"126"%3Bi%3A27%3Bs%3A3%3A"127"%3Bi%3A28%3Bs%3A3%3A"128"%3Bi%3A29%3Bs%3A3%3A"129"%3Bi%3A30%3Bs%3A3%3A"130"%3Bi%3A31%3Bs%3A3%3A"131"%3Bi%3A32%3Bs%3A3%3A"132"%3Bi%3A33%3Bs%3A3%3A"133"%3Bi%3A34%3Bs%3A3%3A"134"%3Bi%3A35%3Bs%3A3%3A"135"%3Bi%3A36%3Bs%3A3%3A"136"%3Bi%3A37%3Bs%3A3%3A"137"%3Bi%3A38%3Bs%3A3%3A"138"%3Bi%3A39%3Bs%3A3%3A"139"%3Bi%3A40%3Bs%3A3%3A"140"%3Bi%3A41%3Bs%3A3%3A"141"%3Bi%3A42%3Bs%3A3%3A"142"%3Bi%3A43%3Bs%3A3%3A"143"%3Bi%3A44%3Bs%3A3%3A"144"%3Bi%3A45%3Bs%3A3%3A"145"%3Bi%3A46%3Bs%3A3%3A"146"%3Bi%3A47%3Bs%3A3%3A"147"%3Bi%3A48%3Bs%3A3%3A"148"%3Bi%3A49%3Bs%3A3%3A"149"%3Bi%3A50%3Bs%3A3%3A"150"%3Bi%3A51%3Bs%3A3%3A"151"%3Bi%3A52%3Bs%3A3%3A"152"%3Bi%3A53%3Bs%3A3%3A"153"%3Bi%3A54%3Bs%3A3%3A"154"%3Bi%3A55%3Bs%3A3%3A"155"%3Bi%3A56%3Bs%3A3%3A"156"%3Bi%3A57%3Bs%3A3%3A"157"%3Bi%3A58%3Bs%3A3%3A"158"%3Bi%3A59%3Bs%3A3%3A"159"%3Bi%3A60%3Bs%3A3%3A"160"%3Bi%3A61%3Bs%3A3%3A"161"%3Bi%3A62%3Bs%3A3%3A"162"%3Bi%3A63%3Bs%3A3%3A"163"%3Bi%3A64%3Bs%3A3%3A"164"%3Bi%3A65%3Bs%3A3%3A"165"%3Bi%3A66%3Bs%3A3%3A"166"%3Bi%3A67%3Bs%3A3%3A"167"%3Bi%3A68%3Bs%3A3%3A"168"%3Bi%3A69%3Bs%3A3%3A"169"%3Bi%3A70%3Bs%3A3%3A"170"%3Bi%3A71%3Bs%3A3%3A"171"%3Bi%3A72%3Bs%3A3%3A"172"%3Bi%3A73%3Bs%3A3%3A"173"%3Bi%3A74%3Bs%3A3%3A"174"%3Bi%3A75%3Bs%3A3%3A"175"%3Bi%3A76%3Bs%3A3%3A"176"%3Bi%3A77%3Bs%3A3%3A"177"%3Bi%3A78%3Bs%3A3%3A"178"%3Bi%3A79%3Bs%3A3%3A"179"%3Bi%3A80%3Bs%3A3%3A"180"%3Bi%3A81%3Bs%3A3%3A"181"%3Bi%3A82%3Bs%3A3%3A"182"%3Bi%3A83%3Bs%3A3%3A"183"%3Bi%3A84%3Bs%3A3%3A"184"%3Bi%3A85%3Bs%3A3%3A"185"%3Bi%3A86%3Bs%3A3%3A"186"%3Bi%3A87%3Bs%3A3%3A"187"%3Bi%3A88%3Bs%3A3%3A"188"%3Bi%3A89%3Bs%3A3%3A"189"%3Bi%3A90%3Bs%3A3%3A"190"%3Bi%3A91%3Bs%3A3%3A"191"%3Bi%3A92%3Bs%3A3%3A"192"%3Bi%3A93%3Bs%3A3%3A"193"%3Bi%3A94%3Bs%3A3%3A"194"%3Bi%3A95%3Bs%3A3%3A"195"%3Bi%3A96%3Bs%3A3%3A"196"%3Bi%3A97%3Bs%3A3%3A"197"%3Bi%3A98%3Bs%3A3%3A"198"%3Bi%3A99%3Bs%3A3%3A"199"%3Bi%3A100%3Bs%3A3%3A"200"%3B%7D
