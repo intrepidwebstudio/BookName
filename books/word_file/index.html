@@ -9,10 +9,28 @@
         <meta name="keywords" content="flip, pages, flipboard, layout, responsive, web, web design, grid, ipad, jquery, css3, 3d, perspective, transitions, transform" />
         <meta name="author" content="" />
         <link rel="shortcut icon" href="../favicon.ico"> 
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+		<link href='font.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="js/modernizr.custom.08464.js"></script>
+        
+        
+<!--===============================================Word Document js files============================================================-->        
+    <script type="text/javascript" src="word/jquery1.js"></script>
+    <script type="text/javascript" src="word/jszip/dist/jszip.js"></script>
+    <script type="text/javascript" src="word/DOCX.js/docx.js"></script>
+    <script type="text/javascript" src="word/main.js"></script>
+<!--===========================================================================================================-->        
+<script>
+
+
+//var h=document.open('C:\Users\ramesh\Documents\text.docx');
+
+//alert(h);
+
+
+</script>        
+        
 		<script id="pageTmpl" type="text/x-jquery-tmpl">
 			<div class="${theClass}" style="${theStyle}">
 				<div class="front">
@@ -37,51 +55,60 @@
     </head>
     <body>
 		
-<!--        <a href="send.html#all.pdf">click here check</a>
--->        
+       <span id="hide_div">
+                <input type="file" id="file" />
+                <input type="button" id="convert" value="convert"  />
+          </span>      
+          
+<!--          
+          List of PDF files
+          <ul>
+          <li><a href="../pdf_file/send.html#../all_1.pdf">sample BOOK</a></li>
+          <li><a href="../pdf_file/send.html#../10page.pdf">sample-2 BOOK</a></li>
+          </ul>
+-->                
+
+<div style="max-height:0px;overflow:hidden" id="display_none">
+<div id="div_0" style="border: 1px #000 solid; margin-top: 10px;"></div>
+ </div>   
+
+
+
+        
 <!--		<header class="main-title">
 			<h1>Experimental Page Layout <strong>Inspired by Flipboard</strong></h1>
 			<p>Swipe or drag to flip the pages, click to open items </p>
 			<p><strong>Best viewed in a Webkit browser (Safari, Chrome)</strong></p>
 		</header>
 -->		
-<center><button onclick=window.location="../../index.html" style="z-index:999999999">Eixt Book</button></center>
         
 		<div id="flip" class="container">
         
-		
-        
-        
 			
 		</div>
-	
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+		<script type="text/javascript" src="js/jquery_1.js"></script>
 		<script type="text/javascript">
 
 
-
-		
-function result_fetch(restored_img)
+function result_fetch(for_value)
 {		
-
-
-
+//alert(for_value);
 
 var g='';
 			
-			
-g+='<div class="f-page f-cover"><div class="cover-elements"><div class="logo">Pageflip</div><h1>Spacy Book &amp; </h1></div><div class="f-cover-flip">&lt; Flip</div></div>';
+g ='<div class="f-page f-cover"><div class="cover-elements"><div class="logo">Pageflip</div><div class="f-cover-story"><span>NEW BOOK</span>FLIP BOOK</div></div><div class="f-cover-flip">&lt; Flip</div></div>';
 
 
-for(var b=0; b<restoredSession.screens.length;b++)
+for(var b=0; b<=for_value;b++)
 {
-var img_src=restoredSession.screens[b].name;
-var pages =b+1;
+//var img_src=restoredSession.screens[b].name;
+var data_g='';
+ data_g = document.getElementById('div_'+b).innerHTML;
 
-//g+='<div class="f-page" ><div class="f-title"><div style="background:url('+"'"+img_src+"'"+') no-repeat; " ></div><span >page '+pages+'</span></div></div>';
-
-g+='<div class="f-page" ><div class="f-title" style="max-height:50%;"><img src="'+img_src+'" ></div><span >page '+pages+'</span></div></div>';
+g+='<div class="f-page" ><div class="f-title">'+data_g+'<span>page 2</span></div></div>';
 }
+
 
 		g+='<div class="f-page f-cover-back"><div id="codrops-ad-wrapper"></div></div>';
 			
@@ -110,28 +137,7 @@ g+='<div class="f-page" ><div class="f-title" style="max-height:50%;"><img src="
 			
 }
 
-
-var condition = localStorage.getItem("condition");
-
-//alert(condition);
-
-if(condition=="success")
-{
-	localStorage.setItem("condition","");
-//	condition ="";
-
-// Example of how to transform the String generated through 
-// JSON.stringify and saved in localStorage in JSON object again
-var restoredSession = JSON.parse(localStorage.getItem('session'));
-
-
-result_fetch(restoredSession);
-
-
-	}
-
-
-
+				
 				
 		</script>
     </body>

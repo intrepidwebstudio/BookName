@@ -201,7 +201,6 @@ function PDFViewerPlugin(loc) {
 
         createdPageCount += 1;
         if (createdPageCount === (pdfDocument.numPages)) {
-			
             self.onLoad();
 
 			display_pages();
@@ -227,12 +226,6 @@ function PDFViewerPlugin(loc) {
                 pdfDocument = doc;
                 container = viewContainer;
 			//	alert('create page - success');
-			
-			
-			//$('body').css('background-color','rgba(0,0,0,0.5)')
-			$('#loader').show();
-			
-			
                 for (i = 0; i < pdfDocument.numPages; i += 1) {
                     pdfDocument.getPage(i + 1).then(createPage);
                 }

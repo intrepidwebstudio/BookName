@@ -148,7 +148,7 @@ function assert(cond, msg) {
 // absolute URL, it will be returned as is.
 function combineUrl(baseUrl, url) {
 	
-	//alert('URLLLL');
+//	alert('URLLLL');
 //	alert(baseUrl+'--------'+url);
 	
   if (!url)

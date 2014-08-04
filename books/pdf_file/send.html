@@ -9,20 +9,9 @@
 <!-- =======================================pdf reader script start ======================== -->    
 <script src="viewer.js" type="text/javascript" charset="utf-8"></script>
 <script src="PluginLoader.js" type="text/javascript" charset="utf-8"></script>
-<script src="../../js/jquery.js"></script>
-<script src="../../js/jquery.mobile-1.4.2.js"></script>
 
-
+<!--<script src="Base64ToPNG.js" type="text/javascript"></script>-->
 <script>
-
-
-$( document ).bind( "mobileinit", function() {
-    // Make your jQuery Mobile framework configuration changes here!
-    $.support.cors = true;
-    $.mobile.allowCrossDomainPages = true; 
-});
-
-
 //			 	var location = '#egc.pdf';
 //			 window.location.hash = '#egc.pdf';
 
@@ -95,11 +84,9 @@ loadDocument(location1);
             
         </div>
 
-<div id="loader" style="display:none; position:fixed; top:45%; left:47%; ">
-<img src="loader.gif"  />
-</div>
 
-<script>	
+
+<script>
 function display_pages(){
 	
 var g = document.getElementById('numPages');
@@ -128,7 +115,27 @@ var dataURL = canvas.toDataURL();
 
 session.screens.push({"name":dataURL});
 //alert('ok');
+
+
+
+//================================================================================================
+
+    //Shows how to use optional parameters
+   /* window.plugins.base64ToPNG.saveImage(myBase64, {filename:"dot.png", overwrite: true}, 
+       function(result) {
+          alert(result);
+       }, function(error) {
+          alert(error);
+    });*/
+
+
+
+
+//=====================================================================================
+
+
 }
+
 
 // Converting the JSON string with JSON.stringify 
 // then saving with localStorage in the name of session
@@ -136,7 +143,7 @@ localStorage.setItem('session', JSON.stringify(session));
 localStorage.setItem("condition","success");
 redirect();
 
-},6000);
+},8000);
 
 
 
@@ -149,8 +156,6 @@ redirect();
 
 function redirect()
 {
-	$('#loader').hide();
-	
 	window.location='index.html';
 	}
 

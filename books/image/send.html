@@ -9,38 +9,12 @@
 <!-- =======================================pdf reader script start ======================== -->    
 <script src="viewer.js" type="text/javascript" charset="utf-8"></script>
 <script src="PluginLoader.js" type="text/javascript" charset="utf-8"></script>
-<script src="../../js/jquery.js"></script>
-<script src="../../js/jquery.mobile-1.4.2.js"></script>
 
 
 <script>
-
-
-$( document ).bind( "mobileinit", function() {
-    // Make your jQuery Mobile framework configuration changes here!
-    $.support.cors = true;
-    $.mobile.allowCrossDomainPages = true; 
-});
-
-
 //			 	var location = '#egc.pdf';
 //			 window.location.hash = '#egc.pdf';
-
-//alert ("test");
-//\xampp\htdocs\b\pdf_file
-
-var location1=localStorage.bookname;
-//var location1='/C:/xampp/htdocs/b/pdf_file/egc.pdf';
-
-//var location1='egc.pdf';
- //location1=location1.slice(1);
-
-//alert(location1);
-
-//location1=location1.replace("file://","");
-//alert(location1+'!!!!!!!!!!!!!!!!!!!');
-//alert(location1+'------replace');
-//location1='all.pdf';
+var location1='all.pdf';
 loadDocument(location1);
 </script>
 <!-- =======================================pdf reader script end ======================== -->            
@@ -95,19 +69,19 @@ loadDocument(location1);
             
         </div>
 
-<div id="loader" style="display:none; position:fixed; top:45%; left:47%; ">
-<img src="loader.gif"  />
-</div>
 
-<script>	
+<script src="js/json2xml.js" type="text/javascript" charset="utf-8" ></script>
+<script>
+var value_send;
+
 function display_pages(){
 	
 var g = document.getElementById('numPages');
 var str = g.textContent;
-//alert(str);
+alert(str);
 var h = parseInt(str.substring(3));
 //alert(g.textContent);
-//alert(h);
+alert(h);
 
 // Creating an example of JSON
 var session = {'screens' : []};
@@ -128,19 +102,25 @@ var dataURL = canvas.toDataURL();
 
 session.screens.push({"name":dataURL});
 //alert('ok');
+
+alert(i);
+
 }
 
 // Converting the JSON string with JSON.stringify 
 // then saving with localStorage in the name of session
+
+
+// value_send =JSON.stringify(session);
+ 
 localStorage.setItem('session', JSON.stringify(session));
+
 localStorage.setItem("condition","success");
+alert('ok123');
+
 redirect();
 
-},6000);
-
-
-
-
+},5000);
 
 //var chummaoru = new Date();
 //alert(chummaoru);
@@ -149,9 +129,13 @@ redirect();
 
 function redirect()
 {
-	$('#loader').hide();
 	
-	window.location='index.html';
+//var gh=	json2xml(value_send,"	")
+
+//alert(gh);
+	
+	
+	window.location.href='index.html';
 	}
 
 
