@@ -15,7 +15,15 @@
        <link type="text/css" rel="stylesheet" href="jquery-te-1.4.0.css">
        <link type="text/css" rel="stylesheet" href="demo.css">
        <link type="text/css" rel="stylesheet" href="css/style.css">
-        <title>Hello World</title><script type="text/javascript" >
+        <title>Hello World</title>
+		
+		
+		
+		<script type="text/javascript" >
+		
+		
+		var extension1;
+		var newFileName1;
 // Wait for PhoneGap to load
 function onLoad() {
 	
@@ -68,9 +76,9 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
 	var filename = document.getElementById('filename').value;
 	
 	var ext = document.getElementById('ext');
-	var extension1 = ext.options[ext.selectedIndex].value;
+	 extension1 = ext.options[ext.selectedIndex].value;
 	
-	var newFileName1 = filename + "." + extension1;
+	 newFileName1 = filename + "." + extension1;
 	
 	entry.copyTo(directory,newFileName1,successMove, resOnError);
 	},
@@ -81,8 +89,61 @@ resOnError);
 
 }
 function successMove(){
+	
+	if (extension1 == "pdf") {
+		
+		var filename = document.getElementById('filename').value;
+		
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	
+	
+   fileSystem.root.getDirectory("myappfolder", {
+           create: true
+       }, function(directory) {
+
+        var directoryReader = directory.createReader();
+        directoryReader.readEntries(function(entries) {
+			if(entries.length > 0 ) {
+				
+				 for (i=0; i<entries.length; i++) {
+				var name = entries[i].name;
+				
+				if(name == newFileName1 ){
+					
+					localstorage.bookname = entries[i].fullPath;
+					window.location = "/book/pdf_file/send.html";
+		
+					
+				
+		 }
+		 }
+		 
+		
+	}
+	}, function (error) {
+            alert(error.code);
+        }); 
+		
+	   },function (error){
+			alert(error.code);
+			
+			});
+
+       },function(error) {
+   alert("can't even get the file system: " + error.code);
+}); 
+	
+	
+	}
+	
+	else{
+		
+		
 alert("Your file has been successfully imported");
 window.location("index.html");
+
+	}
+	
 }
 function resOnError(){
 alert("Oops file droped please try again");

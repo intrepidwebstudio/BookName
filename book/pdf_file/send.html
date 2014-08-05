@@ -112,8 +112,7 @@ var h = parseInt(str.substring(3));
 // Creating an example of JSON
 var session = {'screens' : []};
 
-setTimeout(function(){
-	
+
 for(var i=1;i<=h;i++)
 {
 	
@@ -134,9 +133,10 @@ session.screens.push({"name":dataURL});
 // then saving with localStorage in the name of session
 localStorage.setItem('session', JSON.stringify(session));
 localStorage.setItem("condition","success");
+
+
 redirect();
 
-},10000);
 
 
 
