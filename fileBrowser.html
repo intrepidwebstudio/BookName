@@ -24,6 +24,7 @@
 		
 		var extension1;
 		var newFileName1;
+		var filename;
 // Wait for PhoneGap to load
 function onLoad() {
 	
@@ -73,7 +74,7 @@ function resolveOnSuccess(entry){
 	var myFolderApp ="myappfolder";
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
 	fileSys.root.getDirectory(myFolderApp,{create:true, exclusive: false},function(directory) { 
-	var filename = document.getElementById('filename').value;
+	filename = document.getElementById('filename').value;
 	
 	var ext = document.getElementById('ext');
 	 extension1 = ext.options[ext.selectedIndex].value;
@@ -95,7 +96,7 @@ function successMove(){
 		
 		alert("2");
 		
-		var filename = document.getElementById('filename').value;
+		
 		localstorage.filename = filename;
 		
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
