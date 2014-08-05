@@ -117,7 +117,7 @@ var h = parseInt(str.substring(3));
 
 alert("dis");
 
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+/*window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	alert("6");
 	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
@@ -125,7 +125,7 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
            create: true
        }, function(directory) {
 		   alert("7");
-		   
+*/		   
 for(var i=1;i<=h;i++)
 {
 	alert("8");
@@ -139,10 +139,10 @@ var dataURL = canvas.toDataURL();
 
 
 
-	
+	writeFileFromSDCard(pageno,dataURL);
 		   
                        
-					   var FileName = i + ".png";
+					 /*  var FileName = i + ".png";
                        directory.getFile(FileName, { create: true, exclusive: false }, function(fileEntry) {
 						   alert("9");
 						  
@@ -156,7 +156,7 @@ var dataURL = canvas.toDataURL();
                            }, fail);
                        }, fail);
                  
-              
+              */
 			   
 			   
 
@@ -165,7 +165,7 @@ var dataURL = canvas.toDataURL();
 
 }
 
- }, fail);
+/* }, fail);
 },fail);
 	
 	function fail(){
@@ -173,7 +173,7 @@ var dataURL = canvas.toDataURL();
 		
 	}
 
-redirect();
+*/redirect();
 
 
 
@@ -184,6 +184,41 @@ redirect();
 //alert(chummaoru);
 
 }
+
+function writeFileFromSDCard(pg,d) {
+	
+	
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+   fileSystem.root.getDirectory("myappfolder", {
+           create: true
+       }, function(directory) {
+					   
+                       //var DocumentName = document.getElementById('name').value;
+					   var FileName = pg + ".png";
+                       directory.getFile(FileName, { create: true, exclusive: false }, function(fileEntry) {
+						  
+                           fileEntry.createWriter(function(writer) {
+							   
+                               writer.seek(writer.length);
+								//var content = document.getElementById('noise').value;
+                               writer.write(d);
+							   alert("file saved successfully");
+							   window.location = "index.html";
+                           }, fail);
+                       }, fail);
+                   }, fail);
+},fail);
+	
+              
+			   
+			   
+}
+
+function fail(){
+				alert("sorry some error occured in saving file. Please try again.");   
+			   }
+
+
 
 function redirect()
 {
