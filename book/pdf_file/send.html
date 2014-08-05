@@ -115,7 +115,7 @@ var session = {'screens' : []};
 
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	alert("6");
-	var filename = localstorage.filename
+	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
    fileSystem.root.getDirectory(foldername, {
            create: true
