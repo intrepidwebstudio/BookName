@@ -11,7 +11,7 @@
 <script src="PluginLoader.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../js/jquery.js"></script>
 <script src="../../js/jquery.mobile-1.4.2.js"></script>
-
+<script src="phonegap.js"></script>
 
 <script>
 
@@ -113,8 +113,18 @@ var h = parseInt(str.substring(3));
 var session = {'screens' : []};
 
 
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	alert("6");
+	var filename = localstorage.filename
+	var foldername = "myappfolder/"+ filename; 
+   fileSystem.root.getDirectory(foldername, {
+           create: true
+       }, function(directory) {
+		   alert("7");
+		   
 for(var i=1;i<=h;i++)
 {
+	alert("8");
 	
 var pageno=i;
 
@@ -123,17 +133,37 @@ var context = canvas.getContext('2d');
 // save canvas image as data url (png format by default)
 var dataURL = canvas.toDataURL();	  
 
-//alert(dataURL);
 
-session.screens.push({"name":dataURL});
-//alert('ok');
+
+	
+		   
+                       
+					   var FileName = i + ".png";
+                       directory.getFile(FileName, { create: true, exclusive: false }, function(fileEntry) {
+						   alert("9");
+						  
+                           fileEntry.createWriter(function(writer) {
+							   
+                               writer.seek(writer.length);
+								var content = document.getElementById('noise').value;
+                               writer.write(dataURL);
+							   alert("file saved successfully");
+							   //window.location = "index.html";
+                           }, fail);
+                       }, fail);
+                 
+              
+			   
+			   
+
+
+ 
+
 }
 
-// Converting the JSON string with JSON.stringify 
-// then saving with localStorage in the name of session
-localStorage.setItem('session', JSON.stringify(session));
-localStorage.setItem("condition","success");
-
+ }, fail);
+},fail);
+	
 
 redirect();
 
@@ -151,7 +181,8 @@ function redirect()
 {
 	$('#loader').hide();
 	
-	window.location='index.html';
+	alert("your file has been imported successfully ");	
+	window.location='../index.html';
 	}
 
 

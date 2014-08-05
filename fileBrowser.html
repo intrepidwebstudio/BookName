@@ -89,17 +89,22 @@ resOnError);
 
 }
 function successMove(){
+	alert("1");
 	
-/*	if (extension1 == "pdf") {
+	if (extension1 == "pdf") {
+		
+		alert("2");
 		
 		var filename = document.getElementById('filename').value;
+		localstorage.filename = filename;
 		
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-	
+	alert("3");
 	
    fileSystem.root.getDirectory("myappfolder", {
            create: true
        }, function(directory) {
+		   alert("4");
 
         var directoryReader = directory.createReader();
         directoryReader.readEntries(function(entries) {
@@ -109,7 +114,7 @@ function successMove(){
 				var name = entries[i].name;
 				
 				if(name == newFileName1 ){
-					
+					alert("5");
 					localstorage.bookname = entries[i].fullPath;
 					window.location = "/book/pdf_file/send.html";
 		
@@ -137,12 +142,12 @@ function successMove(){
 	}
 	
 	else{
-*/		
+	
 		
 alert("Your file has been successfully imported");
 window.location("index.html");
 
-	
+	}
 	
 }
 function resOnError(){
