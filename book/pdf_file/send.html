@@ -113,8 +113,9 @@ var h = parseInt(str.substring(3));
 //alert(h);
 
 // Creating an example of JSON
-var session = {'screens' : []};
+//var session = {'screens' : []};
 
+alert("dis");
 
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	alert("6");
@@ -167,6 +168,10 @@ var dataURL = canvas.toDataURL();
  }, fail);
 },fail);
 	
+	function fail(){
+		alert("fail");
+		
+	}
 
 redirect();
 
