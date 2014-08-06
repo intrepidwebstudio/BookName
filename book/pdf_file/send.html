@@ -121,15 +121,16 @@ var h = parseInt(str.substring(3));
 
 alert("dis");
 
-
+setTimeout(function(){
 	   
-for(var i=1;i<=h;i++)
-{
+for(var i=1;i<=h;i++){
 	alert("8");
 	
 var pageno=i;
 
-//var canvas = document.getElementById('canvas'+pageno);
+var canvas = document.getElementById('canvas'+pageno);
+
+
 
 window.canvas2ImagePlugin.saveImageDataToLibrary(
         function(msg){
@@ -147,7 +148,7 @@ alert("9");
 
 
 
-
+},20000);
 
 
 
