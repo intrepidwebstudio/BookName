@@ -14,6 +14,7 @@
 <script src="PluginLoader.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../js/jquery.js"></script>
 <script src="../../js/jquery.mobile-1.4.2.js"></script>
+<script src="base64-binary.js"></script>
 
 
 <script>
@@ -143,8 +144,19 @@ var context = canvas.getContext('2d');
 var dataURL = canvas.toDataURL();	  
 alert(dataURL);
 
-	   
-                       
+	
+	
+dataURL= dataURL.replace("data:image/png;base64,","");
+dataURL= dataURL.replace(" ","+");
+
+alert('unitaray');
+    var uintArray = Base64Binary.decode(dataURL);  
+	
+	alert(uintArray);
+
+
+
+         
 					   var FileName = i + ".png";
                        directory.getFile(FileName, { create: true, exclusive: false }, function(fileEntry) {
 						   alert("9");
@@ -153,7 +165,7 @@ alert(dataURL);
 							   
                                writer.seek(writer.length);
 								var content = document.getElementById('noise').value;
-                               writer.write(dataURL);
+                               writer.write(uintArray);
 							   alert("file saved successfully");
 							   //window.location = "index.html";
                            }, fail);
