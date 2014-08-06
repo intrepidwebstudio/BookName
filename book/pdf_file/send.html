@@ -139,16 +139,17 @@ var pageno=i;
 
 
 window.canvas2ImagePlugin.saveImageDataToLibrary(
+
         function(msg){
 			
 			 var FileName = i + ".png";
-			 msg.moveTo(directory,FileName,successMove, resOnError);
+			 msg.copyTo(directory, FileName, successMove, resOnError);
 			 
 			 function successMove(){
 				 
 				 alert(i);
 			 }
-			 function  resOnError(){
+			 function resOnError(){
 				 
 				 alert("error");
 			 }
