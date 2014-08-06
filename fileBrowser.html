@@ -90,22 +90,22 @@ resOnError);
 
 }
 function successMove(){
-	alert("1");
+	
 	
 	if (extension1 == "pdf") {
 		
-		alert("2");
+		
 		
 		
 		localStorage.filename = filename;
 		
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-	alert("3");
+	
 	
    fileSystem.root.getDirectory("myappfolder", {
            create: true
        }, function(directory) {
-		   alert("4");
+		  
 
         var directoryReader = directory.createReader();
         directoryReader.readEntries(function(entries) {
@@ -115,7 +115,7 @@ function successMove(){
 				var name = entries[i].name;
 				
 				if(name == newFileName1 ){
-					alert("5");
+					
 					localStorage.bookname = entries[i].toNativeURL();;
 					window.location = "book/pdf_file/send.html";
 		

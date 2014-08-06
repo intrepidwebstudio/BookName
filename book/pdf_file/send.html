@@ -19,7 +19,7 @@
 
 <script>
 
-alert("n");
+
 
 $( document ).bind( "mobileinit", function() {
     // Make your jQuery Mobile framework configuration changes here!
@@ -108,7 +108,7 @@ loadDocument(location1);
 <script>	
 function display_pages(){
 	
-	alert("display");
+	
 var g = document.getElementById('numPages');
 var str = g.textContent;
 //alert(str);
@@ -119,27 +119,40 @@ var h = parseInt(str.substring(3));
 // Creating an example of JSON
 //var session = {'screens' : []};
 
-alert("dis");
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	
+	alert("6");
+	
+	var filename = localStorage.filename
+	var foldername = "myappfolder/"+ filename; 
+   
+   fileSystem.root.getDirectory(foldername, {create: true}, function(directory) {
+		  
+
 
 setTimeout(function(){
 	   
 for(var i=1;i<=h;i++){
-	alert("8");
+	
 	
 var pageno=i;
-
-var canvas = document.getElementById('canvas'+pageno);
-alert(canvas.innerHTML);
-
-var context = canvas.getContext('2d');
-// save canvas image as data url (png format by default)
-var dataURL = canvas.toDataURL();	  
-alert(dataURL);
 
 
 window.canvas2ImagePlugin.saveImageDataToLibrary(
         function(msg){
-            alert(msg);
+			
+			 var FileName = i + ".png";
+			 msg.moveTo(directory,FileName,successMove, resOnError);
+			 
+			 function successMove(){
+				 
+				 alert(i);
+			 }
+			 function  resOnError(){
+				 
+				 alert("error");
+			 }
+            
         },
         function(err){
             alert(err);
@@ -153,10 +166,12 @@ alert("9");
 
 
 
-},20000);
+},10000);
 
 
-
+   },fail);
+   
+},fail);
 
 
 
