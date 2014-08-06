@@ -7,11 +7,14 @@
 
 
 <!-- =======================================pdf reader script start ======================== -->    
+<script src="phonegap.js"></script>
+
+
 <script src="viewer.js" type="text/javascript" charset="utf-8"></script>
 <script src="PluginLoader.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../js/jquery.js"></script>
 <script src="../../js/jquery.mobile-1.4.2.js"></script>
-<script src="phonegap.js"></script>
+
 
 <script>
 
@@ -104,6 +107,7 @@ loadDocument(location1);
 <script>	
 function display_pages(){
 	
+	alert("display");
 var g = document.getElementById('numPages');
 var str = g.textContent;
 //alert(str);
@@ -112,12 +116,22 @@ var h = parseInt(str.substring(3));
 //alert(h);
 
 // Creating an example of JSON
-var session = {'screens' : []};
+//var session = {'screens' : []};
 
-setTimeout(function(){
-	
+alert("dis");
+
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	alert("6");
+	var filename = localStorage.filename
+	var foldername = "myappfolder/"+ filename; 
+   fileSystem.root.getDirectory(foldername, {
+           create: true
+       }, function(directory) {
+		   alert("7");
+	   
 for(var i=1;i<=h;i++)
 {
+	alert("8");
 	
 var pageno=i;
 
@@ -126,39 +140,44 @@ var context = canvas.getContext('2d');
 // save canvas image as data url (png format by default)
 var dataURL = canvas.toDataURL();	  
 
-//alert(dataURL);
-
-session.screens.push({"name":dataURL});
-//alert('ok');
 
 
+	writeFileFromSDCard(pageno,dataURL);
+		   
+                       
+					 /*  var FileName = i + ".png";
+                       directory.getFile(FileName, { create: true, exclusive: false }, function(fileEntry) {
+						   alert("9");
+						  
+                           fileEntry.createWriter(function(writer) {
+							   
+                               writer.seek(writer.length);
+								var content = document.getElementById('noise').value;
+                               writer.write(dataURL);
+							   alert("file saved successfully");
+							   //window.location = "index.html";
+                           }, fail);
+                       }, fail);
+                 
+              */
+			   
+			   
 
-//================================================================================================
 
-    //Shows how to use optional parameters
-   /* window.plugins.base64ToPNG.saveImage(myBase64, {filename:"dot.png", overwrite: true}, 
-       function(result) {
-          alert(result);
-       }, function(error) {
-          alert(error);
-    });*/
-
-
-
-
-//=====================================================================================
-
+ 
 
 }
 
+ }, fail);
+},fail);
+	
+	function fail(){
+		alert("fail");
+		
+	}
 
-// Converting the JSON string with JSON.stringify 
-// then saving with localStorage in the name of session
-localStorage.setItem('session', JSON.stringify(session));
-localStorage.setItem("condition","success");
 redirect();
 
-},8000);
 
 
 
@@ -174,7 +193,7 @@ function redirect()
 {
 	$('#loader').hide();
 	
-//	alert("your file has been imported successfully ");	
+	alert("your file has been imported successfully ");	
 	window.location='../index.html';
 	}
 
