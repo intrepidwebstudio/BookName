@@ -121,12 +121,14 @@ var h = parseInt(str.substring(3));
 alert("dis");
 
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	
 	alert("6");
+	
 	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
-   fileSystem.root.getDirectory(foldername, {
-           create: true
-       }, function(directory) {
+   
+   fileSystem.root.getDirectory(foldername, {create: true}, function(directory) {
+		  
 		   alert("7");
 	   
 for(var i=1;i<=h;i++)
@@ -139,7 +141,7 @@ var canvas = document.getElementById('canvas'+pageno);
 var context = canvas.getContext('2d');
 // save canvas image as data url (png format by default)
 var dataURL = canvas.toDataURL();	  
-
+alert(dataURL);
 
 	   
                        
@@ -174,7 +176,7 @@ var dataURL = canvas.toDataURL();
 		
 	}
 
-redirect();
+
 
 
 
