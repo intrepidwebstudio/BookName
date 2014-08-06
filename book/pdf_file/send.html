@@ -129,7 +129,12 @@ for(var i=1;i<=h;i++){
 var pageno=i;
 
 var canvas = document.getElementById('canvas'+pageno);
+alert(canvas.innerHTML);
 
+var context = canvas.getContext('2d');
+// save canvas image as data url (png format by default)
+var dataURL = canvas.toDataURL();	  
+alert(dataURL);
 
 
 window.canvas2ImagePlugin.saveImageDataToLibrary(
