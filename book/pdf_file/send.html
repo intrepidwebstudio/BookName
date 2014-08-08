@@ -147,14 +147,11 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(
 
         function(msg){
 			alert(msg);
-			
-			
-				
-			
 			 var FileName = i + ".png";
 			 alert (FileName);
 			 alert(msg);
-			 alert(directory);
+			 alert(directory.fullPath);
+			 
 			 msg.copyTo(directory,FileName,successMove,resOnError1);
 			 
 			 function successMove(){
