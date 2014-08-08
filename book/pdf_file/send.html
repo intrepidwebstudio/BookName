@@ -142,6 +142,11 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(
 
         function(msg){
 			
+			window.resolveLocalFileSystemURI(msg, resolveOnSuccess, resOnError);
+			
+			function resolveOnSuccess(msg){
+				
+			
 			 var FileName = i + ".png";
 			 alert (FileName);
 			 alert(msg);
@@ -156,7 +161,10 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(
 				 
 				 alert("error");
 			 }
-            
+			}
+			function resOnError(){
+			alert("error");	
+			}
         },
         function(err){
             alert(err);
