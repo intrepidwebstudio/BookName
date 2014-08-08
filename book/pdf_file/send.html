@@ -147,14 +147,17 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 		
 			msg = "file://" + msg;
 			
-			alert("after File///: " +msg);
+			alert("after File: " +msg);
 			 
 			
 			 
 			 
 			 window.resolveLocalFileSystemURI(msg, function(file) {
+				 
+				 alert(file.fullpath);
 				
 				 var FileName = i + ".png";
+				 alert(FileName);
 				 
 			 file.copyTo(directory,FileName,successMove,resOnError1);
 			 },fail);
