@@ -121,7 +121,7 @@ var h = parseInt(str.substring(3));
 
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
-	alert("6");
+	
 	
 	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
@@ -141,29 +141,30 @@ var pageno=i;
 window.canvas2ImagePlugin.saveImageDataToLibrary(
 
         function(msg){
+			alert(msg);
 			
 			window.resolveLocalFileSystemURI(msg, resolveOnSuccess, resOnError);
 			
-			function resolveOnSuccess(msg){
+			function resolveOnSuccess(entry){
 				
 			
 			 var FileName = i + ".png";
 			 alert (FileName);
 			 alert(msg);
 			 alert(directory);
-			 msg.copyTo(directory, FileName, successMove, resOnError);
+			 entry.copyTo(directory, FileName, successMove, resOnError1);
 			 
 			 function successMove(){
 				 
 				 alert(i);
 			 }
-			 function resOnError(){
+			 function resOnError1(){
 				 
 				 alert("error");
 			 }
 			}
 			function resOnError(){
-			alert("error");	
+			alert("error1");	
 			}
         },
         function(err){
