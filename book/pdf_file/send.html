@@ -131,8 +131,7 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	alert(foldername);
    
    fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
-	   alert(directory);
-		  
+	   
 
 
 setTimeout(function(){
@@ -143,9 +142,8 @@ for(var i=1;i<=h;i++){
 var pageno=i;
 
 
-window.canvas2ImagePlugin.saveImageDataToLibrary(
-
-        function(msg){
+window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
+			
 			alert(msg);
 			
 			msg = "file://" + msg;
@@ -158,18 +156,9 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(
 			 
 			 msg.copyTo(directory,FileName,successMove,resOnError1);
 			 
-			 function successMove(){
-				 
-				 alert(i);
-			 }
-			 function resOnError1(){
-				 
-				 alert("error");
-			 }
+			 
 			
-			
-        },
-        function(err){
+        },function(err){
             alert(err);
         },
         document.getElementById('canvas'+pageno)
@@ -188,6 +177,16 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(
    
 },fail);
 
+
+function successMove(){
+				 
+				 alert(i);
+			 }
+			 function resOnError1(){
+				 
+				 alert("error");
+			 }
+			
 
 function fail(){
 alert("fail");	
