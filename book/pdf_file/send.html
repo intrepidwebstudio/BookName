@@ -147,6 +147,8 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(
 
         function(msg){
 			alert(msg);
+			
+			msg = "file://" + msg;
 			 var FileName = i + ".png";
 			 alert (FileName);
 			 alert(msg);
