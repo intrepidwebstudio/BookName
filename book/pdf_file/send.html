@@ -154,10 +154,11 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			 
 			 window.resolveLocalFileSystemURI(msg, function(file) {
 				 
-				 alert(file.fullpath);
+				 alert(file);
 				
 				 var FileName = i + ".png";
 				 alert(FileName);
+				 alert(directory.fullPath);
 				 
 			 file.copyTo(directory,FileName,successMove,resOnError1);
 			 },fail);
