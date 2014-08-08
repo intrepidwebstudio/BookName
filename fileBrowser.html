@@ -69,8 +69,7 @@ function moveFile(file) {
 	window.resolveLocalFileSystemURI(file, resolveOnSuccess, resOnError);
 }
 function resolveOnSuccess(entry){
-	alert(entry);
-	alert(entry.fullPath);	
+	
 	
 	var myFolderApp ="myappfolder";
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {

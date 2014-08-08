@@ -144,18 +144,20 @@ var pageno=i;
 
 window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			
-			alert(msg);
-			
+		
 			msg = "file://" + msg;
 			
-			alert(msg);
-			 var FileName = i + ".png";
-			 alert (FileName);
-			 alert(msg);
-			 alert(directory.fullPath);
+			alert("after File///: " +msg);
 			 
-			 msg.copyTo(directory,FileName,successMove,resOnError1);
+			
 			 
+			 
+			 window.resolveLocalFileSystemURI(msg, function(file) {
+				
+				 var FileName = i + ".png";
+				 
+			 file.copyTo(directory,FileName,successMove,resOnError1);
+			 },fail);
 			 
 			
         },function(err){
