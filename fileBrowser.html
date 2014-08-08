@@ -74,6 +74,7 @@ function resolveOnSuccess(entry){
 	var myFolderApp ="myappfolder";
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
 	fileSys.root.getDirectory(myFolderApp,{create:true, exclusive: false},function(directory) { 
+	alert(directory);
 	filename = document.getElementById('filename').value;
 	
 	var ext = document.getElementById('ext');
