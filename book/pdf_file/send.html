@@ -138,7 +138,6 @@ setTimeout(function(){
 	   
 for(var i=1;i<=h;i++){
 	
-	alert(i +''+ h);
 	
 	
 var pageno=i;
@@ -151,20 +150,20 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			
 			
 			 window.resolveLocalFileSystemURI(msg, function(file) {
-				 
-				 alert(file);
+				 		
 				
 				 var FileName = i + ".png";
-				 
-				 
-			 file.copyTo(directory,FileName,successMove,resOnError1);
+				 				 
+			 file.copyTo(directory,FileName);
+			 
 			 },fail);
 			 
 			
-        },function(err){
-            alert(err);
-        },
-        document.getElementById('canvas'+pageno)
+        },function(){
+			
+            alert("error in converting image");
+			
+        },document.getElementById('canvas'+pageno)
     );
 
  
