@@ -128,7 +128,7 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
 	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
-	alert(foldername);
+	
    
    fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
 	   
@@ -137,6 +137,8 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 setTimeout(function(){
 	   
 for(var i=1;i<=h;i++){
+	
+	alert(i +''+ h);
 	
 	
 var pageno=i;
@@ -147,18 +149,13 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 		
 			msg = "file://" + msg;
 			
-			alert("after File: " +msg);
-			 
 			
-			 
-			 
 			 window.resolveLocalFileSystemURI(msg, function(file) {
 				 
 				 alert(file);
 				
 				 var FileName = i + ".png";
-				 alert(FileName);
-				 alert(directory.fullPath);
+				 
 				 
 			 file.copyTo(directory,FileName,successMove,resOnError1);
 			 },fail);
@@ -174,7 +171,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 
 }
 
-
+redirect();
 
 },10000);
 
@@ -186,7 +183,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 
 function successMove(){
 				 
-				 alert(i);
+				 
 			 }
 			 function resOnError1(){
 				 
