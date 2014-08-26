@@ -75,6 +75,24 @@
 function onLoad(){
 	
 	
+	for (i=0; i < 5; i++) {
+		
+		
+				var name = "variable";
+				
+				alert(name);
+				var name1 = name.split('.'); 
+			
+			if(name1.length >= 2){
+				var div1 = document.createElement('div');
+                div1.className = 'books';
+				div1.id = i;
+				div1.innerHTML =  i +'<hr>';
+				document.getElementById('content').	appendChild(div1);
+				
+	}
+	}
+	
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
 	
@@ -89,6 +107,12 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 		   
 		        for (i=0; i<entries.length; i++) {
 				var name = entries[i].name;
+				
+			var name1 = str.split(".");
+			alert(name1[1]);
+			if(name1[1] !== ""){
+				
+				
 				var div1 = document.createElement('div');
                 div1.className = 'books';
 				div1.id = entries[i].toNativeURL();
@@ -98,6 +122,7 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 					redirect(this.id);
 				}
             }
+				}
 			}
 			else {
 				

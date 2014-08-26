@@ -36,6 +36,12 @@
 	width:100%;
 }
 
+.books hr {
+	width:80%;
+	margin:0 auto;
+	
+	
+}
 
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0.2); /* make transparent link selection, adjust last value opacity 0 to 1.0 */

@@ -136,11 +136,11 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 
 setTimeout(function(){
 	   
-for(var i=1;i<=h;i++){
+for(var k=1;k<=h;k++){
 	
 	
 	
-var pageno=i;
+var pageno = k;
 
 
 window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
@@ -152,7 +152,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			 window.resolveLocalFileSystemURI(msg, function(file) {
 				 		
 				
-				 var FileName = i + ".png";
+				 var FileName = k + ".png";
 				 				 
 			 file.copyTo(directory,FileName);
 			 
@@ -163,7 +163,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			
             alert("error in converting image");
 			
-        },document.getElementById('canvas'+pageno)
+        },document.getElementById( 'canvas'+ pageno)
     );
 
  
@@ -172,7 +172,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 
 redirect();
 
-},10000);
+},6000);
 
 
    },fail);
