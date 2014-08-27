@@ -121,8 +121,17 @@ var h = parseInt(str.substring(3));
 
 // Creating an example of JSON
 //var session = {'screens' : []};
-alert(h);
 
+
+
+
+setTimeout(function(){
+	   
+for(var k=1;k<=h;k++){
+	
+	
+	
+var pageno = k;
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
 	
@@ -133,39 +142,19 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
    
    fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
 	   
-	   
-   },fail);
-   
-},fail);
 
-
-
-	   
-setTimeout(function(){
-	
-	for(var k=1;k<=h;k++){
+window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
+			
 		
-		
-	
-var pageno = k;
-
-
- window.canvas2ImagePlugin.saveImageDataToLibrary( 
- 
-				function(msg){
-					alert(msg)
-						
-						msg = "file://" + msg;
-				 window.resolveLocalFileSystemURI(msg, function(file) {
+			msg = "file://" + msg;
+			
+			
+			 window.resolveLocalFileSystemURI(msg, function(file) {
+				 		
 				
 				 var FileName = k + ".png";
-				 
-				
 				 				 
 			 file.copyTo(directory,FileName);
-			 
-			 FileName='';
-			 
 			 
 			 },fail);
 			 
@@ -174,24 +163,16 @@ var pageno = k;
 			
             alert("error in converting image");
 			
-        },document.getElementById( 'canvas'+k)
+        },document.getElementById( 'canvas'+ pageno)
     );
 
-alert('msg = ....'+msg);
 
 
-}
+  },fail);
+   
+},fail);
 
 
- },6000);
-
-redirect();
-
-
-
-
-
-/*
 function successMove(){
 				 
 				 
@@ -199,7 +180,7 @@ function successMove(){
 			 function resOnError1(){
 				 
 				 alert("error");
-			 }*/
+			 }
 			
 
 function fail(){
@@ -207,6 +188,16 @@ alert("fail");
 	
 }
 
+ 
+
+}
+
+redirect();
+
+},10000);
+
+
+ 
 //var chummaoru = new Date();
 //alert(chummaoru);
 
