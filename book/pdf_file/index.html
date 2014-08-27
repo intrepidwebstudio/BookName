@@ -73,11 +73,15 @@ split_array.reverse();
 var	bookname = split_array[0];
 
 
-		bookname = bookname.replace(".pdf", "");
+	var values = bookname.split(".");
+	
+		
+		alert(bookname)
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
+	var folder = "myappfolder/" + values[0];
 	
-   			fileSystem.root.getDirectory("myappfolder"+bookname, { create: true}, function(directory) {
+   			fileSystem.root.getDirectory(folder, { create: true}, function(directory) {
 
         var directoryReader = directory.createReader();
         directoryReader.readEntries(function(entries) {
