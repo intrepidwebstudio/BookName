@@ -121,7 +121,7 @@ var h = parseInt(str.substring(3));
 
 // Creating an example of JSON
 //var session = {'screens' : []};
-alert(g);
+alert(h);
 
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
@@ -133,6 +133,10 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
    
    fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
 	   
+	   
+   },fail);
+   
+},fail);
 
 
 
@@ -177,6 +181,8 @@ alert('msg = ....'+msg);
 
 
 }
+
+
  },6000);
 
 redirect();
@@ -184,11 +190,8 @@ redirect();
 
 
 
-   },fail);
-   
-},fail);
 
-
+/*
 function successMove(){
 				 
 				 
@@ -196,7 +199,7 @@ function successMove(){
 			 function resOnError1(){
 				 
 				 alert("error");
-			 }
+			 }*/
 			
 
 function fail(){
