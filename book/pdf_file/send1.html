@@ -139,22 +139,26 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 setTimeout(function(){
 	
 	for(var k=1;k<=h;k++){
-		
-		
 	
 var pageno = k;
 
 
- window.canvas2ImagePlugin.saveImageDataToLibrary( 
- 
-				function(msg){
-						
-						/*msg = "file://" + msg;
-				    	 window.resolveLocalFileSystemURI(msg, function(file) {
-						 var FileName = k + ".png";
-						 file.copyTo(directory,FileName);
+ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
+			
+		
+			msg = "file://" + msg;
+			
+			
+			 window.resolveLocalFileSystemURI(msg, function(file) {
+				 		
+				
+				 var FileName = k + ".png";
+				 
+				
+				 				 
+			 file.copyTo(directory,FileName);
 			 
-						 },fail);*/
+			 },fail);
 			 
 			
         },function(){
