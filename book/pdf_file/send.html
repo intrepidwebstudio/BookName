@@ -127,14 +127,42 @@ var h = parseInt(str.substring(3));
 
 setTimeout(function(){
 	   
+	   var old_name = Array();
+	   
 for(var k=1;k<=h;k++){
 	
 	
 	
 var pageno = k;
+
+
+window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
+			
+		
+			old_name.push(msg);		
+		
+        },function(err){
+			
+            alert("error in converting image == "+err);
+			
+        },document.getElementById( 'canvas'+ pageno)
+    );
+
+ 
+
+}
+
+redirect();
+
+},6000);
+
+
+
+
+ 
+
+
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-	
-	
 	
 	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
@@ -142,33 +170,20 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
    
    fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
 	   
-
-window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
-			
-		
-			msg = "file://" + msg;
-			
-			
-			 window.resolveLocalFileSystemURI(msg, function(file) {
-				 		
-				
-				 var FileName = k + ".png";
+	  
+	  for(var b=0;b<old_name.length;b++)
+	  { 
+	   window.resolveLocalFileSystemURI(old_name[b], function(file) {
+	
+				 var FileName = b + ".png";
 				 				 
 			 file.copyTo(directory,FileName);
 			 
 			 },fail);
-			 
-			
-        },function(){
-			
-            alert("error in converting image");
-			
-        },document.getElementById( 'canvas'+ pageno)
-    );
-
-
-
-  },fail);
+	   
+	  }
+	   
+   },fail);
    
 },fail);
 
@@ -188,16 +203,6 @@ alert("fail");
 	
 }
 
- 
-
-}
-
-redirect();
-
-},10000);
-
-
- 
 //var chummaoru = new Date();
 //alert(chummaoru);
 
