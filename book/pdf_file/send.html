@@ -167,20 +167,25 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
 	
+	
    
    fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
 	   
 	  
 	  for(var b=0;b<old_name.length;b++)
 	  { 
-	   window.resolveLocalFileSystemURI(old_name[b], function(file) {
+	  alert(old_name[b]);
+	  window.resolveLocalFileSystemURI(old_name[b], resolveOnSuccess, resOnError);
+	  
+	  function resolveOnSuccess(entry){
 	
 				 var FileName = b + ".png";
-				 				 
-			 file.copyTo(directory,FileName);
+				
+							 				 
+			 entry.copyTo(directory,FileName,successMove,resOnError);
 			 
-			 },fail);
 	   
+	  }
 	  }
 	   
    },fail);
@@ -192,7 +197,7 @@ function successMove(){
 				 
 				 
 			 }
-			 function resOnError1(){
+			 function resOnError(){
 				 
 				 alert("error");
 			 }
