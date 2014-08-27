@@ -152,7 +152,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 
 }
 
-redirect();
+
 
 },6000);
 
@@ -162,7 +162,16 @@ redirect();
  
 
 
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	  
+	  for(var b=0;b<old_name.length;b++)
+	  { 
+	  alert(old_name[b]);
+	  window.resolveLocalFileSystemURI(old_name[b], resolveOnSuccess, resOnError);
+	  
+	  function resolveOnSuccess(entry){
+		  
+		  alert(entry+"entry")
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
 	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
@@ -171,26 +180,22 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
    
    fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
 	   
-	  
-	  for(var b=0;b<old_name.length;b++)
-	  { 
-	  alert(old_name[b]);
-	  window.resolveLocalFileSystemURI(old_name[b], resolveOnSuccess, resOnError);
-	  
-	  function resolveOnSuccess(entry){
+
 	
 				 var FileName = b + ".png";
 				
 							 				 
 			 entry.copyTo(directory,FileName,successMove,resOnError);
 			 
-	   
-	  }
-	  }
-	   
-   },fail);
+	  },fail);
    
-},fail);
+},fail); 
+	  }
+	   
+	  
+	  }
+	   
+  
 
 
 function successMove(){
@@ -210,6 +215,7 @@ alert("fail");
 
 //var chummaoru = new Date();
 //alert(chummaoru);
+redirect();
 
 }
 
