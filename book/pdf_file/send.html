@@ -121,6 +121,7 @@ var h = parseInt(str.substring(3));
 
 // Creating an example of JSON
 //var session = {'screens' : []};
+alert(g);
 
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
@@ -148,17 +149,21 @@ var pageno = k;
  window.canvas2ImagePlugin.saveImageDataToLibrary( 
  
 				function(msg){
+					alert(msg)
 						
-				//		msg = "file://" + msg;
-				// window.resolveLocalFileSystemURI(msg, function(file) {
+						msg = "file://" + msg;
+				 window.resolveLocalFileSystemURI(msg, function(file) {
 				
-			//	 var FileName = k + ".png";
+				 var FileName = k + ".png";
 				 
-				alert(msg)
+				
 				 				 
-		//	 file.copyTo(directory,FileName);
+			 file.copyTo(directory,FileName);
 			 
-		//	 },fail);
+			 FileName='';
+			 
+			 
+			 },fail);
 			 
 			
         },function(){
@@ -168,6 +173,7 @@ var pageno = k;
         },document.getElementById( 'canvas'+k)
     );
 
+alert('msg = ....'+msg);
 
 
 }
