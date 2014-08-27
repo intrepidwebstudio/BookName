@@ -12,6 +12,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="../../phonegap.js"></script>
 		<script type="text/javascript" src="js/modernizr.custom.08464.js"></script>
 		<script id="pageTmpl" type="text/x-jquery-tmpl">
 			<div class="${theClass}" style="${theStyle}">
@@ -54,6 +55,40 @@
         
 			
 		</div>
+        
+        <script>
+		
+	var length = 0;
+		var fullpath = localStorage.Fullpath;
+		var split_array =fullpath.split('/');
+
+split_array.reverse();
+
+var	bookname = split_array[0];
+
+
+		bookname = bookname.replace(".pdf", "");
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	
+	
+   			fileSystem.root.getDirectory("myappfolder"+bookname, { create: true}, function(directory) {
+
+        var directoryReader = directory.createReader();
+        directoryReader.readEntries(function(entries) {
+			
+		 length = entries.length;
+			
+		},fail);
+	   	},fail);
+		},fail);
+function fail(){
+	
+}
+		
+		
+		result_fetch();
+		
+		</script>
 	
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript">
@@ -61,22 +96,28 @@
 
 
 		
-function result_fetch(restored_img)
+function result_fetch()
 {		
+alert('pdf flip index fullpath = '+ localStorage.Fullpath)
 
+var new_path=localStorage.Fullpath;
 
-
-
+	new_path = new_path.replace(".pdf","/")
+	
+	
 var g='';
-			
 			
 g+='<div class="f-page f-cover"><div class="cover-elements"><div class="logo">Pageflip</div><h1>Spacy Book &amp; </h1></div><div class="f-cover-flip">&lt; Flip</div></div>';
 
 
-for(var b=0; b<restoredSession.screens.length;b++)
+for(var b=0; b<length;b++)
 {
-var img_src=restoredSession.screens[b].name;
-var pages =b+1;
+	
+	
+	var pages =b+1;
+	
+var img_src=new_path+pages+'.png';
+
 
 //g+='<div class="f-page" ><div class="f-title"><div style="background:url('+"'"+img_src+"'"+') no-repeat; " ></div><span >page '+pages+'</span></div></div>';
 
@@ -111,24 +152,24 @@ g+='<div class="f-page" ><div class="f-title" style="max-height:50%;"><img src="
 }
 
 
-var condition = localStorage.getItem("condition");
+//var condition = localStorage.getItem("condition");
 
 //alert(condition);
 
-if(condition=="success")
-{
-	localStorage.setItem("condition","");
+//if(condition=="success")
+//{
+//	localStorage.setItem("condition","");
 //	condition ="";
 
 // Example of how to transform the String generated through 
 // JSON.stringify and saved in localStorage in JSON object again
-var restoredSession = JSON.parse(localStorage.getItem('session'));
+//var restoredSession = JSON.parse(localStorage.getItem('session'));
 
 
-result_fetch(restoredSession);
+//result_fetch(restoredSession);
 
 
-	}
+//	}
 
 
 

@@ -68,17 +68,27 @@
         </div>
         </div>
         
+    <a href="#popupMenu" id="action_popup" data-rel="popup" data-transition="slideup"   class="ui-hidden-accessible"></a>
+<div data-role="popup" id="popupMenu" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-role="list-divider">Choose an action</li>
+            <li><a href="book/pdf_file/index_normal.html">Open as Normal</a></li>
+            <li><a href="book/index.html">Open as flip</a></li>
+        </ul>
+</div>
+        
+        
         <div data-role = "content" id="content">
        
   <script type="text/javascript">
   
 function onLoad(){
 	
-	
-	for (i=0; i < 5; i++) {
+/**** FOR manual function*****/	
+	/*for (i=0; i < 5; i++) {
 		
 		
-				var name = "variable";
+				var name = "variable.pdf";
 				
 				alert(name);
 				var name1 = name.split('.'); 
@@ -86,12 +96,15 @@ function onLoad(){
 			if(name1.length >= 2){
 				var div1 = document.createElement('div');
                 div1.className = 'books';
-				div1.id = i;
-				div1.innerHTML =  i +'<hr>';
+				div1.id = i+'.pdf';
+				div1.innerHTML =  i+'<hr>';
 				document.getElementById('content').	appendChild(div1);
+				div1.onclick =function (){
+					redirect(this.id);
+				}
 				
 	}
-	}
+	}*/
 	
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
@@ -106,11 +119,14 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
            
 		   
 		        for (i=0; i<entries.length; i++) {
+					
+					alert(entries[i].name);
+					
 				var name = entries[i].name;
 				
-			var name1 = str.split(".");
-			alert(name1[1]);
-			if(name1[1] !== ""){
+			var name1 = name.split(".");
+			alert(name1.length);
+			if(name1.length >= 2){
 				
 				
 				var div1 = document.createElement('div');
@@ -151,11 +167,23 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
 
 function redirect(name) {
-	alert (name);
-	
+
 	localStorage.bookname = name;
 	
-	window.location="book/index.html";
+	var book_ext= name.split(".");
+	
+	if(book_ext[1]=='pdf')
+	{
+	
+	$('#action_popup').trigger('click');	
+
+	}else{
+			
+		window.location="book/index.html";			
+			
+			}
+	
+//	
 	
 	
 
