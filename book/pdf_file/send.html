@@ -134,7 +134,7 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	   
 
 
-setTimeout(function(){
+
 	   
 for(var k=1;k<=h;k++){
 	
@@ -143,7 +143,7 @@ for(var k=1;k<=h;k++){
 var pageno = k;
 
 
-window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
+setTimeout(function(){ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			
 		
 			msg = "file://" + msg;
@@ -154,7 +154,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 				
 				 var FileName = k + ".png";
 				 
-				 alert(FileName);
+				
 				 				 
 			 file.copyTo(directory,FileName);
 			 
@@ -168,13 +168,13 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
         },document.getElementById( 'canvas'+ pageno)
     );
 
- 
+ },6000);
 
 }
 
 redirect();
 
-},6000);
+
 
 
    },fail);
