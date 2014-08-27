@@ -149,25 +149,29 @@ var pageno = k;
  
 				function(msg){
 						
-						/*msg = "file://" + msg;
-				    	 window.resolveLocalFileSystemURI(msg, function(file) {
-						 var FileName = k + ".png";
-						 file.copyTo(directory,FileName);
+				//		msg = "file://" + msg;
+				// window.resolveLocalFileSystemURI(msg, function(file) {
+				
+			//	 var FileName = k + ".png";
+				 
+				alert(msg)
+				 				 
+		//	 file.copyTo(directory,FileName);
 			 
-						 },fail);*/
+		//	 },fail);
 			 
 			
         },function(){
 			
             alert("error in converting image");
 			
-        },document.getElementById( 'canvas'+ pageno)
+        },document.getElementById( 'canvas'+k)
     );
 
 
 
 }
- },10000);
+ },6000);
 
 redirect();
 
