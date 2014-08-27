@@ -73,7 +73,7 @@
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
             <li data-role="list-divider">Choose an action</li>
             <li><a href="book/pdf_file/index_normal.html">Open as Normal</a></li>
-            <li><a href="book/index.html">Open as flip</a></li>
+            <li><a href="book/pdf_file/index.html">Open as flip</a></li>
         </ul>
 </div>
         
@@ -115,12 +115,15 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 
         var directoryReader = directory.createReader();
         directoryReader.readEntries(function(entries) {
+			
+			alert(entries.length);
+			
 			if(entries.length > 0 ) {
            
 		   
 		        for (i=0; i<entries.length; i++) {
 					
-					alert(entries[i].name);
+					
 					
 				var name = entries[i].name;
 				
