@@ -162,7 +162,17 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 
 setTimeout(function(){
 	
-	alert(old_name);
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	
+	var filename = localStorage.filename
+	var foldername = "myappfolder/"+ filename; 
+	
+	
+   
+   fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
+	   
+	
+	
  
 	  for(var b=0;b<old_name.length;b++)
 	  
@@ -176,41 +186,33 @@ setTimeout(function(){
 	  function resolveOnSuccess(entry){
 		  
 		  alert(entry+"entry")
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-	
-	var filename = localStorage.filename
-	var foldername = "myappfolder/"+ filename; 
-	
-	
-   
-   fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
-	   
+		  
 
-	
 				 var FileName = b + ".png";
-				
-							 				 
+									 				 
 			 entry.copyTo(directory,FileName,successMove,resOnError);
 			 
-	  },fail);
-   
-},fail); 
-	  }
-	   
-	  
-	  }
-	   
-  
-},7000);
-
-function successMove(){
-				 
+			 function successMove(path){
+				 alert(path);
 				 
 			 }
 			 function resOnError(){
 				 
 				 alert("error");
 			 }
+	 
+	  }
+	   
+	  
+	  }
+	   
+	    },fail);
+   
+},fail); 
+  
+},7000);
+
+
 			
 
 function fail(){
