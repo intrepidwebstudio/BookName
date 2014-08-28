@@ -107,7 +107,7 @@ loadDocument(location1);
 <script src="write.js" ></script>
 <script>	
 
-var old_name = Array();	
+var old_name = [];	
 
 function display_pages(){
 
@@ -141,7 +141,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			
 		alert(msg);
 		
-			old_name[k]=msg;		
+			old_name.push(msg);		
 			
 			alert(old_name[k]);
 		
