@@ -160,9 +160,10 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 
 
 
-
+setTimeout(function(){
  
 	  for(var b=0;b<old_name.length;b++)
+	  
 	  { 
 	  alert("2nd for");
 	  alert(old_name[b]);
@@ -198,7 +199,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 	  }
 	   
   
-
+},7000);
 
 function successMove(){
 				 
@@ -214,8 +215,7 @@ function fail(){
 alert("fail");	
 	
 }
-
-
+setTimeout(function(){
 alert("b = "+b+"  length = "+old_name.length);
 
 if (b == (old_name.length - 1))
@@ -225,6 +225,7 @@ redirect();
 }
 //var chummaoru = new Date();
 //alert(chummaoru);
+},8000);
 
 }
 
