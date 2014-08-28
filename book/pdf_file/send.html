@@ -162,7 +162,21 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 
 setTimeout(function(){
 	
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+	
+	 for(var b=0;b<old_name.length;b++)
+	  
+	  { 
+	  
+	  alert("2nd for "+ old_name.length);
+	  alert(old_name[b]);
+	  old_name[b] = "file://" + old_name[b];
+	  alert(old_name[b]);
+	  
+	  window.resolveLocalFileSystemURI(old_name[b], resolveOnSuccess, resOnError);
+	  
+	  function resolveOnSuccess(entry){
+		  
+		  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
 	
 	var filename = localStorage.filename
 	var foldername = "myappfolder/"+ filename; 
@@ -172,18 +186,6 @@ setTimeout(function(){
    fileSystem.root.getDirectory(foldername, {create: true, exclusive: false}, function(directory) {
 	   
 	
-	
- 
-	  for(var b=0;b<old_name.length;b++)
-	  
-	  { 
-	  alert("2nd for "+ old_name.length);
-	  alert(old_name[b]);
-	  old_name[b] = "file://" + old_name[b];
-	  alert(old_name[b]);
-	  window.resolveLocalFileSystemURI(old_name[b], resolveOnSuccess, resOnError);
-	  
-	  function resolveOnSuccess(entry){
 		  
 		  alert(entry+"entry")
 		  
@@ -200,15 +202,17 @@ setTimeout(function(){
 				 
 				 alert("error");
 			 }
+			 
+			   },fail);
+		   
+				},fail); 
 	 
 	  }
 	   
 	  
 	  }
 	   
-	    },fail);
-   
-},fail); 
+	  
   
 },7000);
 
