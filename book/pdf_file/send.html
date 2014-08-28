@@ -130,19 +130,19 @@ var h = parseInt(str.substring(3));
 setTimeout(function(){
 	   
 	   
-for(var k=1;k<=h;k++){
+for(var k=0;k<h;k++){
 	
 	
 	
-var pageno = k;
+var pageno = k+1;
 
 
 window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			
 		alert(msg);
-			old_name.push(msg);		
+		
+			old_name[k]=msg;		
 			
-
 			alert(old_name[k]);
 		
         },function(err){
@@ -151,8 +151,6 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			
         },document.getElementById( 'canvas'+ pageno)
     );
-
- 
 
 }
 
@@ -166,7 +164,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
  
 	  for(var b=0;b<old_name.length;b++)
 	  { 
-	  aert("2nd for");
+	  alert("2nd for");
 	  alert(old_name[b]);
 	  old_name[b] = "file://" + old_name[b];
 	  alert(old_name[b]);
@@ -216,6 +214,9 @@ function fail(){
 alert("fail");	
 	
 }
+
+
+alert("b = "+b+"  length = "+old_name.length);
 
 if (b == (old_name.length - 1))
 {
