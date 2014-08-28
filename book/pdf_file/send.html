@@ -110,7 +110,8 @@ loadDocument(location1);
 
 
 function display_pages(){
-	
+
+var old_name = Array();	
 	
 var g = document.getElementById('numPages');
 var str = g.textContent;
@@ -122,7 +123,7 @@ var h = parseInt(str.substring(3));
 // Creating an example of JSON
 //var session = {'screens' : []};
 
-	   var old_name = Array();
+	 
 
 
 
@@ -140,6 +141,7 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 			
 		
 			old_name.push(msg);		
+			alert(old_name[k]);
 		
         },function(err){
 			
@@ -160,11 +162,11 @@ window.canvas2ImagePlugin.saveImageDataToLibrary(function(msg){
 
 
  
-
-
-	  
 	  for(var b=0;b<old_name.length;b++)
 	  { 
+	  aert("2nd for");
+	  alert(old_name[b]);
+	  old_name[b] = "file://" + old_name[b];
 	  alert(old_name[b]);
 	  window.resolveLocalFileSystemURI(old_name[b], resolveOnSuccess, resOnError);
 	  
